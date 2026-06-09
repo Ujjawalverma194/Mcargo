@@ -35,7 +35,7 @@ const Navbar = () => {
 
     logo: {
       width: "185px",
-      height: "56px",
+      height: "76px",
       objectFit: "contain",
       display: "block",
       transition: "transform 0.25s ease",
