@@ -135,7 +135,7 @@ const Navbar = () => {
         <NavLink to="/">
           <img
             src={logo}
-            alt="Infinity Logistics"
+            alt="Mcargo Logistics"
             style={styles.logo}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "scale(1.03)";
