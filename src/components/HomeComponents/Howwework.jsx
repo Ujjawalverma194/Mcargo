@@ -10,7 +10,7 @@ import {
   MapPin,
 } from "lucide-react";
 
-const WorkProcess = () => {
+const Howwework = () => {
   const [hovered, setHovered] = useState(null);
 
   const styles = {
@@ -267,22 +267,118 @@ const WorkProcess = () => {
 
   return (
     <>
-      <section style={styles.section}>
-        <div style={styles.header}>
-          <div style={styles.label}>HOW WE WORK</div>
+      
+        <style>
+          {`
+            @media (max-width: 768px) {
+              .work-process-section {
+                padding: 86px 24px 80px !important;
+              }
 
-          <h2 style={styles.title}>
+              .work-process-header {
+                margin-bottom: 48px !important;
+              }
+
+              .work-process-label {
+                font-size: 13px !important;
+                margin-bottom: 18px !important;
+              }
+
+              .work-process-title {
+                font-size: 40px !important;
+                line-height: 1.18 !important;
+                letter-spacing: -1px !important;
+              }
+
+              .work-process-subtitle {
+                font-size: 16px !important;
+                line-height: 1.65 !important;
+                max-width: 280px !important;
+                margin: 0 auto !important;
+              }
+
+              .work-process-grid {
+                grid-template-columns: 1fr !important;
+                gap: 18px !important;
+              }
+
+              .work-process-card,
+              .work-process-wide,
+              .work-process-stats-card {
+                grid-column: auto !important;
+                min-height: 240px !important;
+                border-radius: 22px !important;
+              }
+
+              .work-process-white-card,
+              .work-process-solid-card {
+                padding: 28px !important;
+              }
+
+              .work-process-light-icon,
+              .work-process-solid-icon {
+                margin-bottom: 72px !important;
+              }
+
+              .work-process-card-content {
+                left: 26px !important;
+                right: 26px !important;
+                bottom: 24px !important;
+              }
+
+              .work-process-stats-card {
+                padding: 26px !important;
+                min-height: 230px !important;
+              }
+
+              .work-process-stats-line {
+                margin-bottom: 46px !important;
+              }
+
+              .work-process-stats-row {
+                gap: 18px !important;
+              }
+
+              .work-process-stat-number {
+                font-size: 24px !important;
+              }
+            }
+
+            @media (max-width: 420px) {
+              .work-process-section {
+                padding: 80px 24px 74px !important;
+              }
+
+              .work-process-title {
+                font-size: 38px !important;
+              }
+
+              .work-process-card,
+              .work-process-wide,
+              .work-process-stats-card {
+                min-height: 226px !important;
+              }
+            }
+          `}
+        </style>
+
+      <section style={styles.section} className="work-process-section">
+        <div style={styles.header} className="work-process-header">
+          <div style={styles.label} className="work-process-label">HOW WE WORK</div>
+
+          <h2 style={styles.title} className="work-process-title">
             Built around <span style={styles.blue}>your</span>{" "}
             <span style={styles.cyan}>cargo</span>
           </h2>
 
-          <p style={styles.subtitle}>
+          <p style={styles.subtitle} className="work-process-subtitle">
             Compliance before cargo moves, zero surprises after.
           </p>
         </div>
 
-        <div style={styles.grid}>
+        <div style={styles.grid} className="work-process-grid">
           <div
+            className="work-process-card work-process-wide"
             style={{
               ...styles.card,
               ...styles.imageCard,
@@ -296,7 +392,7 @@ const WorkProcess = () => {
           >
             <div style={styles.overlay}></div>
 
-            <div style={styles.cardContent}>
+            <div style={styles.cardContent} className="work-process-card-content">
               <div style={styles.icon}>
                 <ShieldCheck size={21} />
               </div>
@@ -310,6 +406,7 @@ const WorkProcess = () => {
           </div>
 
           <div
+            className="work-process-card work-process-solid-card"
             style={{
               ...styles.card,
               ...styles.solidGreen,
@@ -318,7 +415,7 @@ const WorkProcess = () => {
             onMouseEnter={() => setHovered(1)}
             onMouseLeave={() => setHovered(null)}
           >
-            <div style={styles.solidIcon}>
+            <div style={styles.solidIcon} className="work-process-solid-icon">
               <FileCheck size={21} />
             </div>
             <div style={styles.solidTitle}>
@@ -330,6 +427,7 @@ const WorkProcess = () => {
           </div>
 
           <div
+            className="work-process-card work-process-white-card"
             style={{
               ...styles.card,
               ...styles.whiteCard,
@@ -338,7 +436,7 @@ const WorkProcess = () => {
             onMouseEnter={() => setHovered(2)}
             onMouseLeave={() => setHovered(null)}
           >
-            <div style={styles.lightIcon}>
+            <div style={styles.lightIcon} className="work-process-light-icon">
               <Thermometer size={21} />
             </div>
             <div style={styles.whiteTitle}>
@@ -350,6 +448,7 @@ const WorkProcess = () => {
           </div>
 
           <div
+            className="work-process-card work-process-solid-card"
             style={{
               ...styles.card,
               ...styles.solidBlue,
@@ -358,7 +457,7 @@ const WorkProcess = () => {
             onMouseEnter={() => setHovered(3)}
             onMouseLeave={() => setHovered(null)}
           >
-            <div style={styles.solidIcon}>
+            <div style={styles.solidIcon} className="work-process-solid-icon">
               <Truck size={21} />
             </div>
             <div style={styles.solidTitle}>First mile to last mile</div>
@@ -368,6 +467,7 @@ const WorkProcess = () => {
           </div>
 
           <div
+            className="work-process-card work-process-wide"
             style={{
               ...styles.card,
               ...styles.imageCard,
@@ -381,7 +481,7 @@ const WorkProcess = () => {
           >
             <div style={styles.overlay}></div>
 
-            <div style={styles.cardContent}>
+            <div style={styles.cardContent} className="work-process-card-content">
               <div style={styles.icon}>
                 <Globe2 size={21} />
               </div>
@@ -395,6 +495,7 @@ const WorkProcess = () => {
           </div>
 
           <div
+            className="work-process-card work-process-white-card"
             style={{
               ...styles.card,
               ...styles.whiteCard,
@@ -403,7 +504,7 @@ const WorkProcess = () => {
             onMouseEnter={() => setHovered(5)}
             onMouseLeave={() => setHovered(null)}
           >
-            <div style={styles.lightIcon}>
+            <div style={styles.lightIcon} className="work-process-light-icon">
               <Clock3 size={21} />
             </div>
             <div style={styles.whiteTitle}>One account manager</div>
@@ -413,6 +514,7 @@ const WorkProcess = () => {
           </div>
 
           <div
+            className="work-process-card work-process-wide"
             style={{
               ...styles.card,
               ...styles.imageCard,
@@ -426,7 +528,7 @@ const WorkProcess = () => {
           >
             <div style={styles.overlay}></div>
 
-            <div style={styles.cardContent}>
+            <div style={styles.cardContent} className="work-process-card-content">
               <div style={styles.icon}>
                 <Award size={21} />
               </div>
@@ -440,6 +542,7 @@ const WorkProcess = () => {
           </div>
 
           <div
+            className="work-process-stats-card"
             style={{
               ...styles.statsCard,
               ...hoverStyle(7),
@@ -452,23 +555,23 @@ const WorkProcess = () => {
               12 YEARS OF INDIA TRADE
             </div>
 
-            <div style={styles.statsLine}>
+            <div style={styles.statsLine} className="work-process-stats-line">
               Your Cargo, Our Responsibility.
             </div>
 
-            <div style={styles.statsRow}>
+            <div style={styles.statsRow} className="work-process-stats-row">
               <div>
-                <div style={styles.statNumber}>30K+</div>
+                <div style={styles.statNumber} className="work-process-stat-number">30K+</div>
                 <div style={styles.statText}>Shipments</div>
               </div>
 
               <div>
-                <div style={styles.statNumber}>2,700+</div>
+                <div style={styles.statNumber} className="work-process-stat-number">2,700+</div>
                 <div style={styles.statText}>Garment</div>
               </div>
 
               <div>
-                <div style={styles.statNumber}>1,000+</div>
+                <div style={styles.statNumber} className="work-process-stat-number">1,000+</div>
                 <div style={styles.statText}>Engineering</div>
               </div>
             </div>
@@ -479,4 +582,4 @@ const WorkProcess = () => {
   );
 };
 
-export default WorkProcess;
+export default Howwework;

@@ -4,7 +4,6 @@ import {
   MapPin,
   Phone,
   ArrowRight,
-  Ship,
   ShieldCheck,
 } from "lucide-react";
 
@@ -61,6 +60,7 @@ const Footer = () => {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+      flexShrink: 0,
     },
 
     stripTitle: {
@@ -87,6 +87,7 @@ const Footer = () => {
       gap: "9px",
       cursor: "pointer",
       transition: "all 0.25s ease",
+      whiteSpace: "nowrap",
     },
 
     main: {
@@ -156,6 +157,7 @@ const Footer = () => {
       textDecoration: "none",
       cursor: "pointer",
       transition: "all 0.22s ease",
+      display: "inline-block",
     },
 
     contactItem: {
@@ -252,15 +254,140 @@ const Footer = () => {
 
   const hoverLink = (e, enter) => {
     e.currentTarget.style.color = enter ? "#2848BE" : "#667085";
-    e.currentTarget.style.transform = enter ? "translateX(4px)" : "translateX(0)";
+    e.currentTarget.style.transform = enter
+      ? "translateX(4px)"
+      : "translateX(0)";
   };
 
   return (
     <>
-      <footer style={styles.footer}>
+      <style>
+        {`
+          @media (max-width: 1024px) {
+            .footer-main-responsive {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 38px !important;
+            }
+
+            .footer-brand-responsive,
+            .footer-contact-responsive {
+              grid-column: span 2 !important;
+            }
+
+            .footer-top-strip-responsive {
+              flex-direction: column !important;
+              align-items: flex-start !important;
+              gap: 22px !important;
+            }
+          }
+
+          @media (max-width: 768px) {
+            .footer-responsive {
+              padding: 70px 24px 30px !important;
+            }
+
+            .footer-top-strip-responsive {
+              display: none !important;
+            }
+
+            .footer-main-responsive {
+              grid-template-columns: 1fr 1fr !important;
+              gap: 38px 34px !important;
+            }
+
+            .footer-brand-responsive {
+              grid-column: 1 / -1 !important;
+            }
+
+            .footer-contact-responsive {
+              grid-column: 1 / -1 !important;
+            }
+
+            .footer-logo-responsive {
+              width: 190px !important;
+              height: 72px !important;
+              margin-bottom: 22px !important;
+            }
+
+            .footer-about-responsive {
+              font-size: 16px !important;
+              line-height: 1.8 !important;
+              max-width: 100% !important;
+            }
+
+            .footer-col-title-responsive {
+              font-size: 16px !important;
+              margin-bottom: 20px !important;
+            }
+
+            .footer-link-responsive {
+              font-size: 16px !important;
+              line-height: 1.55 !important;
+            }
+
+            .footer-map-responsive {
+              height: 175px !important;
+              border-radius: 20px !important;
+            }
+
+            .footer-divider-responsive {
+              margin: 42px auto 26px !important;
+            }
+
+            .footer-bottom-responsive {
+              flex-direction: column !important;
+              justify-content: center !important;
+              text-align: center !important;
+              gap: 18px !important;
+              font-size: 14px !important;
+            }
+
+            .footer-bottom-links-responsive {
+              justify-content: center !important;
+              flex-wrap: wrap !important;
+              gap: 18px !important;
+            }
+          }
+
+          @media (max-width: 420px) {
+            .footer-responsive {
+              padding: 62px 24px 28px !important;
+            }
+
+            .footer-main-responsive {
+              grid-template-columns: 1fr 1fr !important;
+              gap: 36px 30px !important;
+            }
+
+            .footer-brand-responsive {
+              grid-column: 1 / -1 !important;
+            }
+
+            .footer-contact-responsive {
+              grid-column: 1 / -1 !important;
+            }
+
+            .footer-logo-responsive {
+              width: 185px !important;
+            }
+
+            .footer-contact-item-responsive {
+              font-size: 15px !important;
+            }
+
+            .footer-map-label-responsive {
+              left: 14px !important;
+              bottom: 14px !important;
+              font-size: 12px !important;
+            }
+          }
+        `}
+      </style>
+
+      <footer style={styles.footer} className="footer-responsive">
         <div style={styles.bgGrid}></div>
 
-        <div style={styles.topStrip}>
+        <div style={styles.topStrip} className="footer-top-strip-responsive">
           <div style={styles.stripLeft}>
             <div style={styles.stripIcon}>
               <ShieldCheck size={25} />
@@ -289,11 +416,16 @@ const Footer = () => {
           </button>
         </div>
 
-        <div style={styles.main}>
-          <div>
-            <img src={logo} alt="MCargo" style={styles.logo} />
+        <div style={styles.main} className="footer-main-responsive">
+          <div className="footer-brand-responsive">
+            <img
+              src={logo}
+              alt="MCargo"
+              style={styles.logo}
+              className="footer-logo-responsive"
+            />
 
-            <p style={styles.aboutText}>
+            <p style={styles.aboutText} className="footer-about-responsive">
               India-focused import-export compliance and freight advisory
               platform with integrated execution. Your cargo, our
               responsibility.
@@ -311,7 +443,7 @@ const Footer = () => {
                   e.currentTarget.style.color = "#2848BE";
                 }}
               >
-<span style={{ fontWeight: 800, fontSize: "14px" }}>in</span>
+                <span style={{ fontWeight: 800, fontSize: "14px" }}>in</span>
               </div>
 
               <div
@@ -331,7 +463,12 @@ const Footer = () => {
           </div>
 
           <div>
-            <div style={styles.colTitle}>Services</div>
+            <div
+              style={styles.colTitle}
+              className="footer-col-title-responsive"
+            >
+              Services
+            </div>
             <ul style={styles.list}>
               {[
                 "Trade Advisory",
@@ -344,6 +481,7 @@ const Footer = () => {
                   <a
                     href="#"
                     style={styles.link}
+                    className="footer-link-responsive"
                     onMouseEnter={(e) => hoverLink(e, true)}
                     onMouseLeave={(e) => hoverLink(e, false)}
                   >
@@ -355,13 +493,19 @@ const Footer = () => {
           </div>
 
           <div>
-            <div style={styles.colTitle}>Company</div>
+            <div
+              style={styles.colTitle}
+              className="footer-col-title-responsive"
+            >
+              Company
+            </div>
             <ul style={styles.list}>
               {["About Us", "Brochure", "Careers", "Contact"].map((item) => (
                 <li key={item}>
                   <a
                     href="#"
                     style={styles.link}
+                    className="footer-link-responsive"
                     onMouseEnter={(e) => hoverLink(e, true)}
                     onMouseLeave={(e) => hoverLink(e, false)}
                   >
@@ -373,63 +517,95 @@ const Footer = () => {
           </div>
 
           <div>
-            <div style={styles.colTitle}>Resources</div>
+            <div
+              style={styles.colTitle}
+              className="footer-col-title-responsive"
+            >
+              Resources
+            </div>
             <ul style={styles.list}>
-              {["Container Specs", "Incoterms", "Case Studies", "HS Code Guide"].map(
-                (item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
-                      style={styles.link}
-                      onMouseEnter={(e) => hoverLink(e, true)}
-                      onMouseLeave={(e) => hoverLink(e, false)}
-                    >
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+              {[
+                "Container Specs",
+                "Incoterms",
+                "Case Studies",
+                "HS Code Guide",
+              ].map((item) => (
+                <li key={item}>
+                  <a
+                    href="#"
+                    style={styles.link}
+                    className="footer-link-responsive"
+                    onMouseEnter={(e) => hoverLink(e, true)}
+                    onMouseLeave={(e) => hoverLink(e, false)}
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div>
-            <div style={styles.colTitle}>Contact</div>
+          <div className="footer-contact-responsive">
+            <div
+              style={styles.colTitle}
+              className="footer-col-title-responsive"
+            >
+              Contact
+            </div>
 
-            <div style={styles.contactItem}>
+            <div
+              style={styles.contactItem}
+              className="footer-contact-item-responsive"
+            >
               <Mail size={18} style={styles.contactIcon} />
               info@mcargo.com
             </div>
 
-            <div style={styles.contactItem}>
+            <div
+              style={styles.contactItem}
+              className="footer-contact-item-responsive"
+            >
               <Phone size={18} style={styles.contactIcon} />
               +91 98765 43210
             </div>
 
-            <div style={styles.contactItem}>
+            <div
+              style={styles.contactItem}
+              className="footer-contact-item-responsive"
+            >
               <MapPin size={18} style={styles.contactIcon} />
               Mumbai, Maharashtra, India
             </div>
 
-            <div style={styles.mapBox}>
+            <div style={styles.mapBox} className="footer-map-responsive">
               <div style={styles.mapGrid}></div>
 
               <div style={styles.mapPin}>
                 <MapPin size={22} />
               </div>
 
-              <div style={styles.mapLabel}>
+              <div
+                style={styles.mapLabel}
+                className="footer-map-label-responsive"
+              >
                 MCargo Operations Hub
               </div>
             </div>
           </div>
         </div>
 
-        <div style={styles.divider}></div>
+        <div
+          style={styles.divider}
+          className="footer-divider-responsive"
+        ></div>
 
-        <div style={styles.bottom}>
+        <div style={styles.bottom} className="footer-bottom-responsive">
           <div>© 2026 MCargo. All rights reserved.</div>
 
-          <div style={styles.bottomLinks}>
+          <div
+            style={styles.bottomLinks}
+            className="footer-bottom-links-responsive"
+          >
             <a href="#" style={styles.link}>
               Terms & Conditions
             </a>

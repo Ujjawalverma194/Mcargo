@@ -1,4 +1,6 @@
+/* Services.jsx */
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Ship,
   FileCheck,
@@ -78,7 +80,6 @@ const Services = () => {
       position: "relative",
       borderTop: "1px solid #eef2f8",
     },
-
     gridBg: {
       position: "absolute",
       inset: 0,
@@ -90,7 +91,6 @@ const Services = () => {
       animation: "gridMove 22s linear infinite",
       pointerEvents: "none",
     },
-
     top: {
       maxWidth: "1450px",
       margin: "0 auto 55px",
@@ -101,7 +101,6 @@ const Services = () => {
       zIndex: 2,
       animation: "fadeUp 0.7s ease forwards",
     },
-
     label: {
       display: "inline-flex",
       alignItems: "center",
@@ -116,7 +115,6 @@ const Services = () => {
       borderRadius: "999px",
       border: "1px solid #dbe6ff",
     },
-
     heading: {
       fontSize: "48px",
       lineHeight: "1.15",
@@ -125,11 +123,9 @@ const Services = () => {
       letterSpacing: "-1.5px",
       margin: 0,
     },
-
     blue: {
       color: "#2848BE",
     },
-
     desc: {
       marginTop: "24px",
       fontSize: "18px",
@@ -137,7 +133,6 @@ const Services = () => {
       color: "#667085",
       maxWidth: "720px",
     },
-
     topBtn: {
       background: "#2848BE",
       color: "#ffffff",
@@ -154,7 +149,6 @@ const Services = () => {
       transition: "all 0.25s ease",
       textDecoration: "none",
     },
-
     statsStrip: {
       maxWidth: "1450px",
       margin: "0 auto 42px",
@@ -165,7 +159,6 @@ const Services = () => {
       zIndex: 2,
       animation: "fadeUp 0.85s ease forwards",
     },
-
     statBox: {
       background: "rgba(255,255,255,0.86)",
       border: "1px solid #e8edf7",
@@ -177,7 +170,6 @@ const Services = () => {
       boxShadow: "0 10px 24px rgba(15,23,42,0.045)",
       backdropFilter: "blur(8px)",
     },
-
     statIcon: {
       width: "42px",
       height: "42px",
@@ -189,19 +181,16 @@ const Services = () => {
       justifyContent: "center",
       flexShrink: 0,
     },
-
     statTitle: {
       fontSize: "15px",
       fontWeight: "700",
       color: "#101828",
       marginBottom: "3px",
     },
-
     statText: {
       fontSize: "13px",
       color: "#667085",
     },
-
     grid: {
       maxWidth: "1450px",
       margin: "0 auto",
@@ -211,7 +200,6 @@ const Services = () => {
       position: "relative",
       zIndex: 2,
     },
-
     card: {
       background: "#ffffff",
       borderRadius: "24px",
@@ -224,13 +212,11 @@ const Services = () => {
       position: "relative",
       animation: "fadeUp 0.9s ease forwards",
     },
-
     imageBox: {
       height: "250px",
       position: "relative",
       overflow: "hidden",
     },
-
     image: {
       width: "100%",
       height: "100%",
@@ -238,7 +224,6 @@ const Services = () => {
       display: "block",
       transition: "transform 0.65s ease",
     },
-
     fade: {
       position: "absolute",
       inset: 0,
@@ -246,7 +231,6 @@ const Services = () => {
         "linear-gradient(to bottom, rgba(255,255,255,0) 20%, rgba(255,255,255,0.98) 90%)",
       zIndex: 1,
     },
-
     iconBox: {
       position: "absolute",
       right: "24px",
@@ -262,14 +246,12 @@ const Services = () => {
       boxShadow: "0 14px 28px rgba(15,23,42,0.18)",
       transition: "all 0.28s ease",
     },
-
     content: {
       padding: "0 38px 36px",
       marginTop: "-13px",
       position: "relative",
       zIndex: 3,
     },
-
     title: {
       fontSize: "23px",
       lineHeight: "1.25",
@@ -277,14 +259,12 @@ const Services = () => {
       marginBottom: "16px",
       transition: "color 0.25s ease",
     },
-
     text: {
       fontSize: "15px",
       lineHeight: "1.6",
       color: "#667085",
       marginBottom: "26px",
     },
-
     link: {
       display: "inline-flex",
       alignItems: "center",
@@ -294,13 +274,11 @@ const Services = () => {
       textDecoration: "none",
       transition: "all 0.25s ease",
     },
-
     addon: {
       width: "650px",
       minHeight: "72px",
       margin: "62px auto 0",
-      background:
-        "linear-gradient(90deg, #ffffff 0%, #f7faff 100%)",
+      background: "linear-gradient(90deg, #ffffff 0%, #f7faff 100%)",
       borderRadius: "20px",
       border: "1px solid #e2eaf7",
       display: "flex",
@@ -316,13 +294,11 @@ const Services = () => {
       position: "relative",
       zIndex: 2,
     },
-
     addonSmall: {
       color: "#8a94a6",
       fontSize: "13px",
       fontWeight: "500",
     },
-
     consult: {
       margin: "48px auto 0",
       width: "410px",
@@ -343,7 +319,6 @@ const Services = () => {
       position: "relative",
       zIndex: 2,
     },
-
     circleArrow: {
       width: "46px",
       height: "46px",
@@ -371,50 +346,164 @@ const Services = () => {
             from { background-position: 0 0; }
             to { background-position: 80px 80px; }
           }
+
+          @media (max-width: 768px) {
+            .services-mobile-section {
+              padding: 72px 24px 82px !important;
+            }
+
+            .services-mobile-top {
+              flex-direction: column !important;
+              align-items: flex-start !important;
+              gap: 30px !important;
+              margin-bottom: 42px !important;
+            }
+
+            .services-mobile-label {
+              margin-bottom: 20px !important;
+            }
+
+            .services-mobile-heading {
+              font-size: 42px !important;
+              line-height: 1.15 !important;
+              letter-spacing: -1px !important;
+            }
+
+            .services-mobile-desc {
+              font-size: 17px !important;
+              line-height: 1.75 !important;
+              max-width: 100% !important;
+            }
+
+            .services-mobile-link-wrap {
+              width: 100% !important;
+              text-decoration: none !important;
+            }
+
+            .services-mobile-btn {
+              width: 100% !important;
+              justify-content: center !important;
+            }
+
+            .services-mobile-stats {
+              grid-template-columns: 1fr !important;
+              gap: 16px !important;
+              margin-bottom: 34px !important;
+            }
+
+            .services-mobile-grid {
+              grid-template-columns: 1fr !important;
+              gap: 26px !important;
+            }
+
+            .services-mobile-card {
+              min-height: auto !important;
+              border-radius: 24px !important;
+            }
+
+            .services-mobile-image {
+              height: 255px !important;
+            }
+
+            .services-mobile-content {
+              padding: 0 28px 32px !important;
+            }
+
+            .services-mobile-title {
+              font-size: 24px !important;
+            }
+
+            .services-mobile-addon {
+              width: 100% !important;
+              min-height: auto !important;
+              box-sizing: border-box !important;
+              padding: 24px !important;
+              flex-direction: column !important;
+              text-align: center !important;
+              margin-top: 48px !important;
+            }
+
+            .services-mobile-addon-small {
+              line-height: 1.55 !important;
+            }
+
+            .services-mobile-consult {
+              width: 100% !important;
+              box-sizing: border-box !important;
+              padding: 0 18px !important;
+              justify-content: flex-start !important;
+              gap: 16px !important;
+            }
+          }
+
+          @media (max-width: 420px) {
+            .services-mobile-section {
+              padding: 64px 24px 74px !important;
+            }
+
+            .services-mobile-heading {
+              font-size: 38px !important;
+            }
+
+            .services-mobile-image {
+              height: 230px !important;
+            }
+
+            .services-mobile-content {
+              padding: 0 24px 30px !important;
+            }
+
+            .services-mobile-consult {
+              font-size: 14px !important;
+            }
+          }
         `}
       </style>
 
-      <section style={styles.section}>
+      <section style={styles.section} className="services-mobile-section">
         <div style={styles.gridBg}></div>
 
-        <div style={styles.top}>
+        <div style={styles.top} className="services-mobile-top">
           <div>
-            <div style={styles.label}>
+            <div style={styles.label} className="services-mobile-label">
               <Sparkles size={15} />
               OUR SERVICES
             </div>
 
-            <h2 style={styles.heading}>
+            <h2 style={styles.heading} className="services-mobile-heading">
               From Documentation to
               <br />
               <span style={styles.blue}>Delivery</span>
             </h2>
 
-            <p style={styles.desc}>
+            <p style={styles.desc} className="services-mobile-desc">
               Advisory-led logistics - combining compliance expertise, freight
               execution, and digital tools to de-risk your international trade.
             </p>
           </div>
 
-          <button
-            style={styles.topBtn}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-3px)";
-              e.currentTarget.style.boxShadow =
-                "0 18px 38px rgba(40,72,190,0.32)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow =
-                "0 14px 30px rgba(40,72,190,0.24)";
-            }}
-          >
-            View All Services
-            <ArrowRight size={19} />
-          </button>
+          <Link to="/services" className="services-mobile-link-wrap">
+            <button
+              style={styles.topBtn}
+              className="services-mobile-btn"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-3px)";
+                e.currentTarget.style.boxShadow =
+                  "0 18px 38px rgba(40,72,190,0.32)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow =
+                  "0 14px 30px rgba(40,72,190,0.24)";
+              }}
+            >
+              View All Services
+              <ArrowRight size={19} />
+            </button>
+          </Link>
         </div>
 
-        <div style={styles.statsStrip}>
+        <div style={styles.statsStrip} className="services-mobile-stats">
           <div style={styles.statBox}>
             <div style={styles.statIcon}>
               <CheckCircle2 size={20} />
@@ -446,13 +535,14 @@ const Services = () => {
           </div>
         </div>
 
-        <div style={styles.grid}>
+        <div style={styles.grid} className="services-mobile-grid">
           {services.map((service, index) => {
             const isHovered = hovered === index;
 
             return (
               <div
                 key={index}
+                className="services-mobile-card"
                 onMouseEnter={() => setHovered(index)}
                 onMouseLeave={() => setHovered(null)}
                 style={{
@@ -466,7 +556,7 @@ const Services = () => {
                   transform: isHovered ? "translateY(-6px)" : "translateY(0)",
                 }}
               >
-                <div style={styles.imageBox}>
+                <div style={styles.imageBox} className="services-mobile-image">
                   <img
                     src={service.img}
                     alt={service.title}
@@ -491,12 +581,13 @@ const Services = () => {
                   </div>
                 </div>
 
-                <div style={styles.content}>
+                <div style={styles.content} className="services-mobile-content">
                   <h3
                     style={{
                       ...styles.title,
                       color: isHovered ? "#2848BE" : "#020617",
                     }}
+                    className="services-mobile-title"
                   >
                     {service.title}
                   </h3>
@@ -521,6 +612,7 @@ const Services = () => {
         </div>
 
         <div
+          className="services-mobile-addon"
           onMouseEnter={() => setAddonHover(true)}
           onMouseLeave={() => setAddonHover(false)}
           style={{
@@ -535,13 +627,17 @@ const Services = () => {
           }}
         >
           Explore Addon Services
-          <span style={styles.addonSmall}>
+          <span
+            style={styles.addonSmall}
+            className="services-mobile-addon-small"
+          >
             ECTN, Cargo Insurance, Fumigation & more
           </span>
           <ArrowRight size={18} />
         </div>
 
         <div
+          className="services-mobile-consult"
           onMouseEnter={() => setConsultHover(true)}
           onMouseLeave={() => setConsultHover(false)}
           style={{

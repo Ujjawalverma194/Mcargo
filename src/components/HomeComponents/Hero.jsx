@@ -1,3 +1,4 @@
+/* Hero.jsx */
 import React from "react";
 import {
   ShieldCheck,
@@ -24,7 +25,6 @@ const Hero = () => {
       overflow: "hidden",
       position: "relative",
     },
-
     gridOverlay: {
       position: "absolute",
       inset: 0,
@@ -36,7 +36,6 @@ const Hero = () => {
       animation: "gridMove 18s linear infinite",
       pointerEvents: "none",
     },
-
     scene3d: {
       position: "absolute",
       right: "4%",
@@ -48,7 +47,6 @@ const Hero = () => {
       zIndex: 1,
       pointerEvents: "none",
     },
-
     globe3d: {
       position: "absolute",
       inset: "64px",
@@ -60,7 +58,6 @@ const Hero = () => {
         "inset -18px -20px 35px rgba(40,72,190,0.12), 0 20px 60px rgba(40,72,190,0.14)",
       animation: "rotateGlobe 18s linear infinite",
     },
-
     orbit1: {
       position: "absolute",
       inset: "50px",
@@ -68,7 +65,6 @@ const Hero = () => {
       border: "1px solid rgba(40,72,190,0.18)",
       animation: "orbitSpin 14s linear infinite",
     },
-
     orbit2: {
       position: "absolute",
       inset: "92px",
@@ -76,7 +72,6 @@ const Hero = () => {
       border: "1px solid rgba(18,151,223,0.20)",
       animation: "orbitSpinReverse 20s linear infinite",
     },
-
     orbitDot: {
       position: "absolute",
       width: "10px",
@@ -87,7 +82,6 @@ const Hero = () => {
       left: "-5px",
       boxShadow: "0 0 18px rgba(40,72,190,0.55)",
     },
-
     floatingBox: {
       position: "absolute",
       width: "58px",
@@ -104,7 +98,6 @@ const Hero = () => {
       pointerEvents: "none",
       backdropFilter: "blur(8px)",
     },
-
     container: {
       maxWidth: "1450px",
       margin: "0 auto",
@@ -115,11 +108,9 @@ const Hero = () => {
       position: "relative",
       zIndex: 3,
     },
-
     left: {
       animation: "fadeSlideLeft 0.85s ease forwards",
     },
-
     badge: {
       display: "inline-flex",
       alignItems: "center",
@@ -135,7 +126,6 @@ const Hero = () => {
       boxShadow: "0 8px 18px rgba(40,72,190,0.08)",
       animation: "badgeGlow 2.8s ease-in-out infinite",
     },
-
     dot: {
       width: "8px",
       height: "8px",
@@ -143,7 +133,6 @@ const Hero = () => {
       background: "#2848BE",
       boxShadow: "0 0 0 5px rgba(40,72,190,0.12)",
     },
-
     title: {
       fontSize: "58px",
       lineHeight: "1.06",
@@ -152,13 +141,11 @@ const Hero = () => {
       letterSpacing: "-2px",
       margin: "0 0 24px",
     },
-
     blue: {
       color: "#2848BE",
       position: "relative",
       display: "inline-block",
     },
-
     desc: {
       fontSize: "17px",
       lineHeight: "1.8",
@@ -167,14 +154,12 @@ const Hero = () => {
       fontWeight: "400",
       marginBottom: "30px",
     },
-
     actions: {
       display: "flex",
       alignItems: "center",
       gap: "16px",
       marginBottom: "30px",
     },
-
     primaryBtn: {
       background: "#2848BE",
       color: "#ffffff",
@@ -190,7 +175,6 @@ const Hero = () => {
       boxShadow: "0 12px 28px rgba(40,72,190,0.24)",
       transition: "all 0.25s ease",
     },
-
     secondaryBtn: {
       background: "#ffffff",
       color: "#2848BE",
@@ -202,7 +186,6 @@ const Hero = () => {
       cursor: "pointer",
       transition: "all 0.25s ease",
     },
-
     routePanel: {
       maxWidth: "560px",
       background: "rgba(255,255,255,0.92)",
@@ -217,13 +200,11 @@ const Hero = () => {
       backdropFilter: "blur(10px)",
       transition: "all 0.25s ease",
     },
-
     routePoint: {
       display: "flex",
       alignItems: "center",
       gap: "11px",
     },
-
     pointIcon: {
       width: "42px",
       height: "42px",
@@ -235,20 +216,17 @@ const Hero = () => {
       justifyContent: "center",
       flexShrink: 0,
     },
-
     pointLabel: {
       fontSize: "12px",
       color: "#98A2B3",
       marginBottom: "3px",
     },
-
     pointText: {
       fontSize: "14px",
       fontWeight: "700",
       color: "#101828",
       whiteSpace: "nowrap",
     },
-
     routeMiddle: {
       height: "2px",
       width: "70px",
@@ -257,7 +235,6 @@ const Hero = () => {
       position: "relative",
       overflow: "hidden",
     },
-
     movingDot: {
       position: "absolute",
       top: "-4px",
@@ -269,12 +246,10 @@ const Hero = () => {
       animation: "routeNavbarMove 2.8s linear infinite",
       boxShadow: "0 0 12px rgba(40,72,190,0.45)",
     },
-
     right: {
       position: "relative",
       animation: "fadeSlideRight 0.95s ease forwards",
     },
-
     imageBox: {
       height: "458px",
       borderRadius: "28px",
@@ -284,7 +259,6 @@ const Hero = () => {
       transition: "all 0.35s ease",
       border: "1px solid rgba(255,255,255,0.9)",
     },
-
     heroImage: {
       width: "100%",
       height: "100%",
@@ -292,14 +266,12 @@ const Hero = () => {
       display: "block",
       transition: "transform 0.75s ease",
     },
-
     imageOverlay: {
       position: "absolute",
       inset: 0,
       background:
         "linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.27) 100%)",
     },
-
     routeLine: {
       position: "absolute",
       left: "35px",
@@ -311,7 +283,6 @@ const Hero = () => {
       zIndex: 3,
       overflow: "hidden",
     },
-
     routeDot: {
       position: "absolute",
       width: "10px",
@@ -323,7 +294,6 @@ const Hero = () => {
       animation: "routeMove 4.5s linear infinite",
       boxShadow: "0 0 16px rgba(255,255,255,0.9)",
     },
-
     floatingCard: {
       position: "absolute",
       left: "-24px",
@@ -339,7 +309,6 @@ const Hero = () => {
       border: "1px solid #edf1f7",
       animation: "cardFloat 4s ease-in-out infinite",
     },
-
     cardIcon: {
       width: "50px",
       height: "50px",
@@ -350,19 +319,16 @@ const Hero = () => {
       alignItems: "center",
       justifyContent: "center",
     },
-
     cardNumber: {
       fontSize: "18px",
       fontWeight: "700",
       color: "#0F172A",
       marginBottom: "4px",
     },
-
     cardText: {
       fontSize: "13px",
       color: "#98A2B3",
     },
-
     miniStats: {
       position: "absolute",
       right: "-20px",
@@ -374,19 +340,16 @@ const Hero = () => {
       boxShadow: "0 16px 35px rgba(15,23,42,0.10)",
       animation: "cardFloat 4.8s ease-in-out infinite reverse",
     },
-
     miniNumber: {
       fontSize: "24px",
       fontWeight: "700",
       color: "#2848BE",
       marginBottom: "4px",
     },
-
     miniText: {
       fontSize: "13px",
       color: "#667085",
     },
-
     deliveryChip: {
       position: "absolute",
       right: "26px",
@@ -405,7 +368,6 @@ const Hero = () => {
       backdropFilter: "blur(10px)",
       animation: "chipFloat 3.5s ease-in-out infinite",
     },
-
     features: {
       maxWidth: "1450px",
       margin: "96px auto 0",
@@ -418,7 +380,6 @@ const Hero = () => {
       zIndex: 3,
       animation: "fadeUp 1.1s ease forwards",
     },
-
     feature: {
       display: "flex",
       alignItems: "center",
@@ -427,7 +388,6 @@ const Hero = () => {
       borderRadius: "18px",
       transition: "all 0.25s ease",
     },
-
     featureIcon: {
       width: "48px",
       height: "48px",
@@ -440,20 +400,17 @@ const Hero = () => {
       flexShrink: 0,
       transition: "all 0.25s ease",
     },
-
     featureTitle: {
       fontSize: "15px",
       fontWeight: "700",
       color: "#111827",
       marginBottom: "4px",
     },
-
     featureText: {
       fontSize: "13px",
       color: "#98A2B3",
       whiteSpace: "nowrap",
     },
-
     whatsapp: {
       position: "fixed",
       right: "32px",
@@ -576,13 +533,131 @@ const Hero = () => {
               box-shadow: 0 18px 38px rgba(37,211,102,0.45);
             }
           }
+
+          @media (max-width: 768px) {
+            .hero-mobile-section {
+              min-height: auto !important;
+              padding: 64px 24px 70px !important;
+            }
+
+            .hero-mobile-container {
+              grid-template-columns: 1fr !important;
+              gap: 42px !important;
+            }
+
+            .hero-mobile-scene,
+            .hero-mobile-box {
+              display: none !important;
+            }
+
+            .hero-mobile-badge {
+              margin-bottom: 30px !important;
+              font-size: 12px !important;
+              padding: 8px 15px !important;
+            }
+
+            .hero-mobile-title {
+              font-size: 42px !important;
+              line-height: 1.12 !important;
+              letter-spacing: -1.2px !important;
+              margin-bottom: 22px !important;
+            }
+
+            .hero-mobile-desc {
+              font-size: 17px !important;
+              line-height: 1.75 !important;
+              max-width: 100% !important;
+              margin-bottom: 26px !important;
+            }
+
+            .hero-mobile-actions {
+              flex-direction: column !important;
+              align-items: stretch !important;
+              gap: 14px !important;
+            }
+
+            .hero-mobile-actions button {
+              width: 100% !important;
+              justify-content: center !important;
+            }
+
+            .hero-mobile-route {
+              display: none !important;
+            }
+
+            .hero-mobile-image {
+              height: 360px !important;
+              border-radius: 24px !important;
+            }
+
+            .hero-mobile-stats {
+              position: static !important;
+              margin-top: 18px !important;
+              width: 100% !important;
+              box-sizing: border-box !important;
+            }
+
+            .hero-mobile-card {
+              position: static !important;
+              margin-top: 18px !important;
+              width: 100% !important;
+              min-width: auto !important;
+              box-sizing: border-box !important;
+            }
+
+            .hero-mobile-features {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 16px !important;
+              margin-top: 58px !important;
+              padding-top: 24px !important;
+            }
+
+            .hero-mobile-feature {
+              flex-direction: column !important;
+              align-items: flex-start !important;
+              gap: 12px !important;
+              background: rgba(255,255,255,0.65) !important;
+              border: 1px solid #eef2f8 !important;
+            }
+
+            .hero-mobile-feature-text {
+              white-space: normal !important;
+              line-height: 1.45 !important;
+            }
+
+            .hero-whatsapp {
+              width: 58px !important;
+              height: 58px !important;
+              right: 18px !important;
+              bottom: 18px !important;
+            }
+
+            .hero-whatsapp svg {
+              width: 28px !important;
+              height: 28px !important;
+            }
+          }
+
+          @media (max-width: 420px) {
+            .hero-mobile-title {
+              font-size: 38px !important;
+            }
+
+            .hero-mobile-features {
+              grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .hero-mobile-feature {
+              padding: 12px !important;
+            }
+          }
         `}
       </style>
 
-      <section style={styles.hero}>
+      <section style={styles.hero} className="hero-mobile-section">
         <div style={styles.gridOverlay}></div>
 
-        <div style={styles.scene3d}>
+        <div style={styles.scene3d} className="hero-mobile-scene">
           <div style={styles.orbit1}>
             <span style={styles.orbitDot}></span>
           </div>
@@ -593,6 +668,7 @@ const Hero = () => {
         </div>
 
         <div
+          className="hero-mobile-box"
           style={{
             ...styles.floatingBox,
             right: "35%",
@@ -604,6 +680,7 @@ const Hero = () => {
         </div>
 
         <div
+          className="hero-mobile-box"
           style={{
             ...styles.floatingBox,
             right: "5%",
@@ -618,6 +695,7 @@ const Hero = () => {
         </div>
 
         <div
+          className="hero-mobile-box"
           style={{
             ...styles.floatingBox,
             right: "24%",
@@ -630,26 +708,26 @@ const Hero = () => {
           <Anchor size={23} />
         </div>
 
-        <div style={styles.container}>
+        <div style={styles.container} className="hero-mobile-container">
           <div style={styles.left}>
-            <div style={styles.badge}>
+            <div style={styles.badge} className="hero-mobile-badge">
               <span style={styles.dot}></span>
               12 YEARS · INDIA TRADE SPECIALISTS
             </div>
 
-            <h1 style={styles.title}>
+            <h1 style={styles.title} className="hero-mobile-title">
               Empowering your
               <br />
               <span style={styles.blue}>Global Trade</span>
             </h1>
 
-            <p style={styles.desc}>
+            <p style={styles.desc} className="hero-mobile-desc">
               From HS classification and SVB filings to bonded warehousing and
               last-mile delivery - we handle every step of India's import &
               export chain so you don't have to.
             </p>
 
-            <div style={styles.actions}>
+            <div style={styles.actions} className="hero-mobile-actions">
               <button
                 style={styles.primaryBtn}
                 onMouseEnter={(e) => {
@@ -684,6 +762,7 @@ const Hero = () => {
 
             <div
               style={styles.routePanel}
+              className="hero-mobile-route"
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = "#C8D6F8";
                 e.currentTarget.style.boxShadow =
@@ -699,7 +778,6 @@ const Hero = () => {
                 <div style={styles.pointIcon}>
                   <Ship size={19} />
                 </div>
-
                 <div>
                   <div style={styles.pointLabel}>Origin</div>
                   <div style={styles.pointText}>Port / Factory</div>
@@ -714,7 +792,6 @@ const Hero = () => {
                 <div style={styles.pointIcon}>
                   <Truck size={19} />
                 </div>
-
                 <div>
                   <div style={styles.pointLabel}>Destination</div>
                   <div style={styles.pointText}>Warehouse / Door</div>
@@ -726,6 +803,7 @@ const Hero = () => {
           <div style={styles.right}>
             <div
               style={styles.imageBox}
+              className="hero-mobile-image"
               onMouseEnter={(e) => {
                 const img = e.currentTarget.querySelector("img");
                 if (img) img.style.transform = "scale(1.04)";
@@ -757,16 +835,15 @@ const Hero = () => {
               </div>
             </div>
 
-            <div style={styles.miniStats}>
+            <div style={styles.miniStats} className="hero-mobile-stats">
               <div style={styles.miniNumber}>30,000+</div>
               <div style={styles.miniText}>Shipments executed</div>
             </div>
 
-            <div style={styles.floatingCard}>
+            <div style={styles.floatingCard} className="hero-mobile-card">
               <div style={styles.cardIcon}>
                 <Globe2 size={22} />
               </div>
-
               <div>
                 <div style={styles.cardNumber}>2,700+</div>
                 <div style={styles.cardText}>Garment shipments handled</div>
@@ -775,11 +852,12 @@ const Hero = () => {
           </div>
         </div>
 
-        <div style={styles.features}>
+        <div style={styles.features} className="hero-mobile-features">
           {featureItems.map((item, index) => (
             <div
               key={index}
               style={styles.feature}
+              className="hero-mobile-feature"
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = "#ffffff";
                 e.currentTarget.style.boxShadow =
@@ -810,13 +888,18 @@ const Hero = () => {
 
               <div>
                 <div style={styles.featureTitle}>{item.title}</div>
-                <div style={styles.featureText}>{item.text}</div>
+                <div
+                  style={styles.featureText}
+                  className="hero-mobile-feature-text"
+                >
+                  {item.text}
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div style={styles.whatsapp}>
+        <div style={styles.whatsapp} className="hero-whatsapp">
           <MessageCircle size={34} />
         </div>
       </section>

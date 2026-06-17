@@ -336,28 +336,154 @@ const TrustedWorldwide = () => {
             from { opacity: 0; transform: scale(0.96) translateY(10px); }
             to { opacity: 1; transform: scale(1) translateY(0); }
           }
+
+          @media (max-width: 768px) {
+            .trusted-section {
+              padding: 88px 0 78px !important;
+            }
+
+            .trusted-header {
+              margin-bottom: 52px !important;
+              padding: 0 24px !important;
+            }
+
+            .trusted-heading {
+              display: none !important;
+            }
+
+            .trusted-subtitle {
+              display: none !important;
+            }
+
+            .trusted-slider-wrapper {
+              margin-bottom: 68px !important;
+            }
+
+            .trusted-fade-left,
+            .trusted-fade-right {
+              width: 80px !important;
+            }
+
+            .trusted-logo-card {
+              width: 155px !important;
+              height: 96px !important;
+              border-radius: 20px !important;
+              opacity: 0.55 !important;
+            }
+
+            .trusted-logo-img {
+              max-width: 92px !important;
+              max-height: 58px !important;
+            }
+
+            .trusted-track {
+              gap: 22px !important;
+            }
+
+            .trusted-insight-area {
+              width: calc(100% - 48px) !important;
+              grid-template-columns: 1fr !important;
+              gap: 18px !important;
+            }
+
+            .trusted-side-card {
+              display: none !important;
+            }
+
+            .trusted-stats-card {
+              width: 100% !important;
+              min-height: 250px !important;
+              padding: 28px 24px !important;
+              border-radius: 24px !important;
+              background: linear-gradient(135deg, #2848BE 0%, #12A8E8 100%) !important;
+              color: #ffffff !important;
+            }
+
+            .trusted-stats-icon {
+              background: rgba(255,255,255,0.18) !important;
+            }
+
+            .trusted-slide-tag {
+              background: rgba(255,255,255,0.18) !important;
+              color: #ffffff !important;
+            }
+
+            .trusted-stat-number {
+              font-size: 46px !important;
+              color: #ffffff !important;
+            }
+
+            .trusted-stat-text {
+              color: rgba(255,255,255,0.9) !important;
+              font-size: 15px !important;
+              line-height: 1.45 !important;
+            }
+
+            .trusted-arrow-row {
+              position: absolute !important;
+              left: -18px !important;
+              right: -18px !important;
+              top: 50% !important;
+              transform: translateY(-50%) !important;
+              justify-content: space-between !important;
+              margin-top: 0 !important;
+              pointer-events: none !important;
+            }
+
+            .trusted-arrow-btn {
+              pointer-events: auto !important;
+              width: 48px !important;
+              height: 48px !important;
+            }
+
+            .trusted-dots {
+              margin-top: 34px !important;
+            }
+
+            .trusted-bottom-cta {
+              width: calc(100% - 48px) !important;
+              box-sizing: border-box !important;
+              justify-content: space-between !important;
+              margin-top: 70px !important;
+              font-size: 14px !important;
+            }
+          }
+
+          @media (max-width: 420px) {
+            .trusted-section {
+              padding: 82px 0 72px !important;
+            }
+
+            .trusted-stats-card {
+              min-height: 222px !important;
+            }
+
+            .trusted-stat-number {
+              font-size: 42px !important;
+            }
+          }
         `}
       </style>
 
-      <section style={styles.section}>
-        <div style={styles.header}>
+      <section style={styles.section} className="trusted-section">
+        <div style={styles.header} className="trusted-header">
           <div style={styles.label}>TRUSTED WORLDWIDE</div>
 
-          <h2 style={styles.heading}>
+          <h2 style={styles.heading} className="trusted-heading">
             Trusted by brands moving cargo
             <br />
             <span style={styles.headingBlue}>across global trade lanes</span>
           </h2>
 
-          <p style={styles.subtitle}>
+          <p style={styles.subtitle} className="trusted-subtitle">
             Reliable logistics support for importers, exporters, manufacturers
             and fast-growing businesses.
           </p>
         </div>
 
-        <div style={styles.sliderWrapper}>
-          <div style={styles.fadeLeft}></div>
-          <div style={styles.fadeRight}></div>
+        <div style={styles.sliderWrapper} className="trusted-slider-wrapper">
+          <div style={styles.fadeLeft} className="trusted-fade-left"></div>
+          <div style={styles.fadeRight} className="trusted-fade-right"></div>
 
           <div
             style={styles.slider}
@@ -367,7 +493,7 @@ const TrustedWorldwide = () => {
               setHoveredLogo(null);
             }}
           >
-            <div style={styles.track}>
+            <div style={styles.track} className="trusted-track">
               {logos.map((logo, index) => {
                 const isLogoHovered = hoveredLogo === index;
 
@@ -376,6 +502,7 @@ const TrustedWorldwide = () => {
                     key={index}
                     onMouseEnter={() => setHoveredLogo(index)}
                     onMouseLeave={() => setHoveredLogo(null)}
+                    className="trusted-logo-card"
                     style={{
                       ...styles.logoCard,
                       border: isLogoHovered
@@ -390,6 +517,7 @@ const TrustedWorldwide = () => {
                     <img
                       src={logo}
                       alt=""
+                      className="trusted-logo-img"
                       style={{
                         ...styles.logoImg,
                         filter: isLogoHovered ? "grayscale(0%)" : "grayscale(12%)",
@@ -403,8 +531,8 @@ const TrustedWorldwide = () => {
           </div>
         </div>
 
-        <div style={styles.insightArea}>
-          <div style={styles.sideCard}>
+        <div style={styles.insightArea} className="trusted-insight-area">
+          <div style={styles.sideCard} className="trusted-side-card">
             <div style={styles.sideIcon}>
               <Globe2 size={22} />
             </div>
@@ -415,27 +543,27 @@ const TrustedWorldwide = () => {
           </div>
 
           <div>
-            <div key={activeSlide} style={styles.statsCard}>
+            <div key={activeSlide} style={styles.statsCard} className="trusted-stats-card">
               <div style={styles.statsTop}>
-                <div style={styles.statsIcon}>{slides[activeSlide].icon}</div>
-                <div style={styles.slideTag}>0{activeSlide + 1} / 03</div>
+                <div style={styles.statsIcon} className="trusted-stats-icon">{slides[activeSlide].icon}</div>
+                <div style={styles.slideTag} className="trusted-slide-tag">0{activeSlide + 1} / 03</div>
               </div>
 
-              <h2 style={styles.statNumber}>{slides[activeSlide].number}</h2>
-              <p style={styles.statText}>{slides[activeSlide].text}</p>
+              <h2 style={styles.statNumber} className="trusted-stat-number">{slides[activeSlide].number}</h2>
+              <p style={styles.statText} className="trusted-stat-text">{slides[activeSlide].text}</p>
             </div>
 
-            <div style={styles.arrowRow}>
-              <button onClick={prevSlide} style={styles.arrowBtn}>
+            <div style={styles.arrowRow} className="trusted-arrow-row">
+              <button onClick={prevSlide} style={styles.arrowBtn} className="trusted-arrow-btn">
                 <ChevronLeft size={21} />
               </button>
 
-              <button onClick={nextSlide} style={styles.arrowBtn}>
+              <button onClick={nextSlide} style={styles.arrowBtn} className="trusted-arrow-btn">
                 <ChevronRight size={21} />
               </button>
             </div>
 
-            <div style={styles.dots}>
+            <div style={styles.dots} className="trusted-dots">
               {slides.map((_, index) => (
                 <span
                   key={index}
@@ -446,7 +574,7 @@ const TrustedWorldwide = () => {
             </div>
           </div>
 
-          <div style={styles.sideCard}>
+          <div style={styles.sideCard} className="trusted-side-card">
             <div style={styles.sideIcon}>
               <PackageCheck size={22} />
             </div>
@@ -457,7 +585,7 @@ const TrustedWorldwide = () => {
           </div>
         </div>
 
-        <div style={styles.bottomCta}>
+        <div style={styles.bottomCta} className="trusted-bottom-cta">
           Looking for reliable logistics support?
           <div style={styles.ctaBtn}>
             <ArrowRight size={18} />

@@ -14,7 +14,7 @@ import {
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
-import successtoryImage1 from "../../assets/successtoyimage1.png"
+import successtoryImage1 from "../../assets/successtoyimage1.png";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -456,19 +456,172 @@ const SuccessStories = () => {
             transform: translateY(-3px);
             box-shadow: 0 18px 36px rgba(40,72,190,0.32) !important;
           }
+
+          @media (max-width: 1024px) {
+            .success-impact-panel {
+              grid-template-columns: 1fr !important;
+            }
+
+            .success-contact-card {
+              grid-template-columns: 1fr !important;
+            }
+          }
+
+          @media (max-width: 768px) {
+            .success-section {
+              padding: 82px 24px 90px !important;
+            }
+
+            .success-header {
+              margin-bottom: 48px !important;
+            }
+
+            .success-label {
+              font-size: 13px !important;
+              margin-bottom: 16px !important;
+            }
+
+            .success-title {
+              font-size: 38px !important;
+              line-height: 1.15 !important;
+              letter-spacing: -0.8px !important;
+            }
+
+            .success-subtitle {
+              font-size: 17px !important;
+              line-height: 1.7 !important;
+            }
+
+            .success-swiper {
+              padding: 0 0 64px !important;
+              overflow: visible !important;
+            }
+
+            .success-card {
+              height: auto !important;
+              min-height: 520px !important;
+              border-radius: 24px !important;
+            }
+
+            .success-image-box {
+              height: 225px !important;
+              min-height: 225px !important;
+            }
+
+            .success-card-body {
+              padding: 24px 26px 28px !important;
+            }
+
+            .success-tag {
+              left: 16px !important;
+              top: 16px !important;
+              font-size: 12px !important;
+              padding: 7px 12px !important;
+              max-width: calc(100% - 32px) !important;
+              white-space: nowrap !important;
+              overflow: hidden !important;
+              text-overflow: ellipsis !important;
+            }
+
+            .success-card-title {
+              font-size: 20px !important;
+              min-height: auto !important;
+            }
+
+            .success-card-text {
+              min-height: auto !important;
+            }
+
+            .success-impact-panel {
+              grid-template-columns: 1fr !important;
+              gap: 26px !important;
+              margin-top: 64px !important;
+            }
+
+            .success-impact-left {
+              padding: 30px 26px !important;
+              min-height: auto !important;
+              border-radius: 26px !important;
+            }
+
+            .success-impact-title {
+              font-size: 30px !important;
+            }
+
+            .success-metrics {
+              grid-template-columns: 1fr !important;
+              gap: 14px !important;
+            }
+
+            .success-contact-card {
+              grid-template-columns: 1fr !important;
+              border-radius: 26px !important;
+            }
+
+            .success-contact-content {
+              padding: 32px 26px !important;
+            }
+
+            .success-contact-title {
+              font-size: 28px !important;
+            }
+
+            .success-advisory-btn {
+              width: 100% !important;
+              justify-content: center !important;
+            }
+
+            .success-contact-image-box {
+              min-height: 260px !important;
+            }
+          }
+
+          @media (max-width: 420px) {
+            .success-section {
+              padding: 74px 24px 82px !important;
+            }
+
+            .success-title {
+              font-size: 36px !important;
+            }
+
+            .success-card {
+              min-height: auto !important;
+            }
+
+            .success-image-box {
+              height: 215px !important;
+              min-height: 215px !important;
+            }
+
+            .success-meta {
+              gap: 10px !important;
+              font-size: 13px !important;
+            }
+
+            .success-impact-title {
+              font-size: 28px !important;
+            }
+
+            .success-contact-title {
+              font-size: 26px !important;
+            }
+          }
         `}
       </style>
 
-      <section style={styles.section}>
-        <div style={styles.header}>
-          <div style={styles.label}>SUCCESS STORIES</div>
+      <section style={styles.section} className="success-section">
+        <div style={styles.header} className="success-header">
+          <div style={styles.label} className="success-label">
+            SUCCESS STORIES
+          </div>
 
-          <h2 style={styles.title}>
+          <h2 style={styles.title} className="success-title">
             Real Results, <span style={styles.blue}>Real</span>{" "}
             <span style={styles.green}>Impact</span>
           </h2>
 
-          <p style={styles.subtitle}>
+          <p style={styles.subtitle} className="success-subtitle">
             From project cargo to precision customs clearance — see how MCargo
             delivers measurable results across industries.
           </p>
@@ -485,20 +638,32 @@ const SuccessStories = () => {
           speed={750}
           spaceBetween={34}
           slidesPerView={2}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            769: {
+              slidesPerView: 2,
+              spaceBetween: 34,
+            },
+          }}
           loop={true}
         >
           {stories.map((story, index) => (
             <SwiperSlide key={index}>
-              <div className="story-card" style={styles.card}>
-                <div style={styles.imageBox}>
+              <div className="story-card success-card" style={styles.card}>
+                <div style={styles.imageBox} className="success-image-box">
                   <img src={story.img} alt={story.title} style={styles.image} />
                   <div style={styles.imageOverlay}></div>
-                  <div style={styles.tag}>{story.tag}</div>
+                  <div style={styles.tag} className="success-tag">
+                    {story.tag}
+                  </div>
                   <div style={styles.floatingIcon}>{story.icon}</div>
                 </div>
 
-                <div style={styles.body}>
-                  <div style={styles.meta}>
+                <div style={styles.body} className="success-card-body">
+                  <div style={styles.meta} className="success-meta">
                     <span style={styles.metaItem}>
                       <Building2 size={15} />
                       {story.company}
@@ -510,9 +675,13 @@ const SuccessStories = () => {
                     </span>
                   </div>
 
-                  <h3 style={styles.cardTitle}>{story.title}</h3>
+                  <h3 style={styles.cardTitle} className="success-card-title">
+                    {story.title}
+                  </h3>
 
-                  <p style={styles.text}>{story.text}</p>
+                  <p style={styles.text} className="success-card-text">
+                    {story.text}
+                  </p>
 
                   <div style={styles.bottomLinkArea}>
                     <div style={styles.divider}></div>
@@ -527,14 +696,14 @@ const SuccessStories = () => {
           ))}
         </Swiper>
 
-        <div style={styles.impactPanel}>
-          <div style={styles.impactLeft}>
+        <div style={styles.impactPanel} className="success-impact-panel">
+          <div style={styles.impactLeft} className="success-impact-left">
             <div style={styles.impactBadge}>
               <Globe2 size={16} />
               MCARGO OPERATIONS
             </div>
 
-            <h3 style={styles.impactTitle}>
+            <h3 style={styles.impactTitle} className="success-impact-title">
               One logistics desk for customs, freight and final delivery.
             </h3>
 
@@ -543,7 +712,7 @@ const SuccessStories = () => {
               planning and shipment visibility into one connected workflow.
             </p>
 
-            <div style={styles.metrics}>
+            <div style={styles.metrics} className="success-metrics">
               <div style={styles.metric}>
                 <div style={styles.metricNo}>30K+</div>
                 <div style={styles.metricText}>Shipments planned</div>
@@ -561,14 +730,20 @@ const SuccessStories = () => {
             </div>
           </div>
 
-          <div className="contact-card" style={styles.contactCard}>
-            <div style={styles.contactContent}>
+          <div
+            className="contact-card success-contact-card"
+            style={styles.contactCard}
+          >
+            <div
+              style={styles.contactContent}
+              className="success-contact-content"
+            >
               <div style={styles.smallBadge}>
                 <CheckCircle2 size={16} />
                 Start with confidence
               </div>
 
-              <h3 style={styles.contactTitle}>
+              <h3 style={styles.contactTitle} className="success-contact-title">
                 Plan your next shipment with an expert.
               </h3>
 
@@ -577,7 +752,10 @@ const SuccessStories = () => {
                 import/export documentation and India market compliance.
               </p>
 
-              <button className="advisory-btn" style={styles.advisoryBtn}>
+              <button
+                className="advisory-btn success-advisory-btn"
+                style={styles.advisoryBtn}
+              >
                 Book Free Advisory <ArrowRight size={17} />
               </button>
 
@@ -587,9 +765,13 @@ const SuccessStories = () => {
               </div>
             </div>
 
-            <div style={styles.contactImageBox}>
+            <div
+              style={styles.contactImageBox}
+              className="success-contact-image-box"
+            >
               <img
                 src={successtoryImage1}
+                alt="Success story"
                 style={styles.contactImage}
               />
               <div style={styles.contactOverlay}></div>
