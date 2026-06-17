@@ -91,7 +91,7 @@ const SuccessStories = () => {
     },
 
     blue: {
-      color: "#2848BE",
+      color: "#2e3192",
     },
 
     green: {
@@ -148,7 +148,7 @@ const SuccessStories = () => {
       left: "22px",
       top: "18px",
       background: "rgba(255,255,255,0.94)",
-      color: "#2848BE",
+      color: "#2e3192",
       padding: "8px 14px",
       borderRadius: "999px",
       fontSize: "13px",
@@ -164,7 +164,7 @@ const SuccessStories = () => {
       width: "46px",
       height: "46px",
       borderRadius: "14px",
-      background: "#2848BE",
+      background: "#2e3192",
       color: "#ffffff",
       display: "flex",
       alignItems: "center",
@@ -245,8 +245,8 @@ const SuccessStories = () => {
     },
 
     impactLeft: {
-      background:
-        "linear-gradient(135deg, #2848BE 0%, #1297df 62%, #0EA57A 100%)",
+   background:
+  "linear-gradient(135deg, #2e3192 0%, #3A4AB0 45%, #4F7BFF 75%, #69C4FF 100%)",
       borderRadius: "30px",
       padding: "42px",
       color: "#ffffff",
@@ -354,7 +354,7 @@ const SuccessStories = () => {
 
     advisoryBtn: {
       border: "none",
-      background: "#2848BE",
+      background: "#2e3192",
       color: "#ffffff",
       borderRadius: "15px",
       padding: "15px 24px",
@@ -427,7 +427,7 @@ const SuccessStories = () => {
           .success-swiper .swiper-pagination-bullet-active {
             width: 34px;
             border-radius: 999px;
-            background: #2848BE;
+            background: #2e3192;
           }
 
           .story-card:hover {
@@ -441,7 +441,7 @@ const SuccessStories = () => {
           }
 
           .story-card:hover h3 {
-            color: #2848BE !important;
+            color: #2e3192 !important;
           }
 
           .story-card:hover a {

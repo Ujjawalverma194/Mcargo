@@ -34,7 +34,7 @@ const Footer = () => {
       maxWidth: "1450px",
       margin: "0 auto 58px",
       background:
-        "linear-gradient(135deg, #2848BE 0%, #1297df 65%, #0EA57A 100%)",
+  "linear-gradient(135deg, #2e3192 0%, #3A4AB0 45%, #4F7BFF 75%, #69C4FF 100%)",
       borderRadius: "28px",
       padding: "28px 34px",
       color: "#ffffff",
@@ -76,7 +76,7 @@ const Footer = () => {
 
     stripBtn: {
       background: "#ffffff",
-      color: "#2848BE",
+      color: "#2e3192",
       border: "none",
       borderRadius: "14px",
       padding: "14px 22px",
@@ -126,7 +126,7 @@ const Footer = () => {
       borderRadius: "13px",
       background: "#ffffff",
       border: "1px solid #e2e8f4",
-      color: "#2848BE",
+      color: "#2e3192",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -171,7 +171,7 @@ const Footer = () => {
     },
 
     contactIcon: {
-      color: "#2848BE",
+      color: "#2e3192",
       marginTop: "2px",
       flexShrink: 0,
     },
@@ -204,7 +204,7 @@ const Footer = () => {
       width: "46px",
       height: "46px",
       borderRadius: "50%",
-      background: "#2848BE",
+      background: "#2e3192",
       color: "#ffffff",
       display: "flex",
       alignItems: "center",
@@ -253,7 +253,7 @@ const Footer = () => {
   };
 
   const hoverLink = (e, enter) => {
-    e.currentTarget.style.color = enter ? "#2848BE" : "#667085";
+    e.currentTarget.style.color = enter ? "#2e3192" : "#667085";
     e.currentTarget.style.transform = enter
       ? "translateX(4px)"
       : "translateX(0)";
@@ -435,12 +435,12 @@ const Footer = () => {
               <div
                 style={styles.social}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "#2848BE";
+                  e.currentTarget.style.background = "#2e3192";
                   e.currentTarget.style.color = "#ffffff";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = "#ffffff";
-                  e.currentTarget.style.color = "#2848BE";
+                  e.currentTarget.style.color = "#2e3192";
                 }}
               >
                 <span style={{ fontWeight: 800, fontSize: "14px" }}>in</span>
@@ -449,12 +449,12 @@ const Footer = () => {
               <div
                 style={styles.social}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "#2848BE";
+                  e.currentTarget.style.background = "#2e3192";
                   e.currentTarget.style.color = "#ffffff";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = "#ffffff";
-                  e.currentTarget.style.color = "#2848BE";
+                  e.currentTarget.style.color = "#2e3192";
                 }}
               >
                 <span style={{ fontWeight: 800 }}>▶</span>

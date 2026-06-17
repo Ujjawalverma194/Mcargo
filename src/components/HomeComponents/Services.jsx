@@ -38,21 +38,21 @@ const Services = () => {
       text: "Import/export clearance, duty optimization, EPCG, Advance...",
       img: customsImg,
       icon: <FileCheck size={26} />,
-      color: "linear-gradient(135deg, #2848BE, #12A8E8)",
+      color: "linear-gradient(135deg, #2e3192, #12A8E8)",
     },
     {
       title: "Trade Advisory &...",
       text: "IEC registration, FSSAI licensing, SVB handling, HS classification - de-risk your...",
       img: advisoryImg,
       icon: <ShieldCheck size={26} />,
-      color: "linear-gradient(135deg, #2848BE, #12A8E8)",
+      color: "linear-gradient(135deg, #2e3192, #12A8E8)",
     },
     {
       title: "Inland Transportation",
       text: "Factory-to-port coordination, container securing, and multimodal solutions acros...",
       img: transportImg,
       icon: <Truck size={26} />,
-      color: "linear-gradient(135deg, #12A8E8, #2848BE)",
+      color: "linear-gradient(135deg, #12A8E8, #2e3192)",
     },
     {
       title: "Industry Specialization",
@@ -105,7 +105,7 @@ const Services = () => {
       display: "inline-flex",
       alignItems: "center",
       gap: "8px",
-      color: "#2848BE",
+      color: "#2e3192",
       fontSize: "13px",
       fontWeight: "700",
       letterSpacing: "1px",
@@ -124,7 +124,7 @@ const Services = () => {
       margin: 0,
     },
     blue: {
-      color: "#2848BE",
+      color: "#2e3192",
     },
     desc: {
       marginTop: "24px",
@@ -134,7 +134,7 @@ const Services = () => {
       maxWidth: "720px",
     },
     topBtn: {
-      background: "#2848BE",
+      background: "#2e3192",
       color: "#ffffff",
       border: "none",
       borderRadius: "15px",
@@ -175,7 +175,7 @@ const Services = () => {
       height: "42px",
       borderRadius: "12px",
       background: "#EEF4FF",
-      color: "#2848BE",
+      color: "#2e3192",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -323,7 +323,7 @@ const Services = () => {
       width: "46px",
       height: "46px",
       borderRadius: "50%",
-      background: "#2848BE",
+      background: "#2e3192",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -585,7 +585,7 @@ const Services = () => {
                   <h3
                     style={{
                       ...styles.title,
-                      color: isHovered ? "#2848BE" : "#020617",
+                      color: isHovered ? "#2e3192" : "#020617",
                     }}
                     className="services-mobile-title"
                   >
@@ -598,7 +598,7 @@ const Services = () => {
                     href="#"
                     style={{
                       ...styles.link,
-                      color: isHovered ? "#2848BE" : "#1846b8",
+                      color: isHovered ? "#2e3192" : "#1846b8",
                       transform: isHovered ? "translateX(3px)" : "translateX(0)",
                     }}
                   >
@@ -618,7 +618,7 @@ const Services = () => {
           style={{
             ...styles.addon,
             border: addonHover
-              ? "1.5px solid #2848BE"
+              ? "1.5px solid #2e3192"
               : "1px solid #e2eaf7",
             boxShadow: addonHover
               ? "0 16px 34px rgba(40,72,190,0.14)"
@@ -643,7 +643,7 @@ const Services = () => {
           style={{
             ...styles.consult,
             border: consultHover
-              ? "1.5px solid #2848BE"
+              ? "1.5px solid #2e3192"
               : "1px solid #e2eaf7",
             transform: consultHover ? "translateY(-4px)" : "translateY(0)",
           }}

@@ -13,7 +13,7 @@ import {
   Truck,
   MapPin,
 } from "lucide-react";
-
+import { Link } from "react-router-dom"
 const Hero = () => {
   const styles = {
     hero: {
@@ -77,7 +77,7 @@ const Hero = () => {
       width: "10px",
       height: "10px",
       borderRadius: "50%",
-      background: "#2848BE",
+      background: "#2e3192",
       top: "50%",
       left: "-5px",
       boxShadow: "0 0 18px rgba(40,72,190,0.55)",
@@ -92,7 +92,7 @@ const Hero = () => {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      color: "#2848BE",
+      color: "#2e3192",
       boxShadow: "0 18px 35px rgba(15,23,42,0.10)",
       zIndex: 1,
       pointerEvents: "none",
@@ -119,7 +119,7 @@ const Hero = () => {
       borderRadius: "999px",
       border: "1px solid #C8D6F8",
       background: "rgba(238,244,255,0.9)",
-      color: "#2848BE",
+      color: "#2e3192",
       fontSize: "13px",
       fontWeight: "600",
       marginBottom: "34px",
@@ -130,7 +130,7 @@ const Hero = () => {
       width: "8px",
       height: "8px",
       borderRadius: "50%",
-      background: "#2848BE",
+      background: "#2e3192",
       boxShadow: "0 0 0 5px rgba(40,72,190,0.12)",
     },
     title: {
@@ -142,7 +142,7 @@ const Hero = () => {
       margin: "0 0 24px",
     },
     blue: {
-      color: "#2848BE",
+      color: "#2e3192",
       position: "relative",
       display: "inline-block",
     },
@@ -161,7 +161,7 @@ const Hero = () => {
       marginBottom: "30px",
     },
     primaryBtn: {
-      background: "#2848BE",
+      background: "#2e3192",
       color: "#ffffff",
       border: "none",
       borderRadius: "14px",
@@ -177,7 +177,7 @@ const Hero = () => {
     },
     secondaryBtn: {
       background: "#ffffff",
-      color: "#2848BE",
+      color: "#2e3192",
       border: "1px solid #d9e3fb",
       borderRadius: "14px",
       padding: "15px 26px",
@@ -210,7 +210,7 @@ const Hero = () => {
       height: "42px",
       borderRadius: "13px",
       background: "#EEF4FF",
-      color: "#2848BE",
+      color: "#2e3192",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -230,7 +230,7 @@ const Hero = () => {
     routeMiddle: {
       height: "2px",
       width: "70px",
-      background: "linear-gradient(90deg, #2848BE, #12A8E8)",
+      background: "linear-gradient(90deg, #2e3192, #12A8E8)",
       borderRadius: "999px",
       position: "relative",
       overflow: "hidden",
@@ -242,7 +242,7 @@ const Hero = () => {
       width: "10px",
       height: "10px",
       borderRadius: "50%",
-      background: "#2848BE",
+      background: "#2e3192",
       animation: "routeNavbarMove 2.8s linear infinite",
       boxShadow: "0 0 12px rgba(40,72,190,0.45)",
     },
@@ -314,7 +314,7 @@ const Hero = () => {
       height: "50px",
       borderRadius: "14px",
       background: "#EEF4FF",
-      color: "#2848BE",
+      color: "#2e3192",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -343,7 +343,7 @@ const Hero = () => {
     miniNumber: {
       fontSize: "24px",
       fontWeight: "700",
-      color: "#2848BE",
+      color: "#2e3192",
       marginBottom: "4px",
     },
     miniText: {
@@ -362,7 +362,7 @@ const Hero = () => {
       display: "flex",
       alignItems: "center",
       gap: "8px",
-      color: "#2848BE",
+      color: "#2e3192",
       fontSize: "13px",
       fontWeight: "600",
       backdropFilter: "blur(10px)",
@@ -393,7 +393,7 @@ const Hero = () => {
       height: "48px",
       borderRadius: "14px",
       background: "#EEF4FF",
-      color: "#2848BE",
+      color: "#2e3192",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -744,7 +744,7 @@ const Hero = () => {
                 Free Advisory <ArrowRight size={17} />
               </button>
 
-              <button
+         <Link to="/services">     <button
                 style={styles.secondaryBtn}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-3px)";
@@ -757,7 +757,7 @@ const Hero = () => {
                 }}
               >
                 Explore Services
-              </button>
+              </button></Link>
             </div>
 
             <div
@@ -866,7 +866,7 @@ const Hero = () => {
 
                 const iconBox = e.currentTarget.querySelector(".feature-icon");
                 if (iconBox) {
-                  iconBox.style.background = "#2848BE";
+                  iconBox.style.background = "#2e3192";
                   iconBox.style.color = "#ffffff";
                 }
               }}
@@ -878,7 +878,7 @@ const Hero = () => {
                 const iconBox = e.currentTarget.querySelector(".feature-icon");
                 if (iconBox) {
                   iconBox.style.background = "#EEF4FF";
-                  iconBox.style.color = "#2848BE";
+                  iconBox.style.color = "#2e3192";
                 }
               }}
             >

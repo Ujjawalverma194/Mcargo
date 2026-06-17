@@ -24,7 +24,7 @@ const AboutPositioning = () => {
       padding: "7px 14px",
       borderRadius: "999px",
       border: "1px solid #d9e3fb",
-      color: "#2848BE",
+      color: "#2e3192",
       fontSize: "13px",
       fontWeight: "700",
       letterSpacing: "0.8px",
@@ -42,7 +42,7 @@ const AboutPositioning = () => {
     },
 
     blue: {
-      color: "#2848BE",
+      color: "#2e3192",
     },
 
     cyan: {
@@ -77,7 +77,7 @@ const AboutPositioning = () => {
       fontSize: "32px",
       lineHeight: "1",
       fontWeight: "700",
-      color: "#2848BE",
+      color: "#2e3192",
       marginBottom: "10px",
     },
 

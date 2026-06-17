@@ -16,7 +16,7 @@ const AboutServiceModel = () => {
       title: "Trade Advisory & Compliance",
       text: "IEC registration, FSSAI licensing, SVB handling, HS classification, export scheme optimization and duty planning.",
       icon: <ShieldCheck size={27} />,
-      color: "linear-gradient(135deg, #2848BE, #139FE3)",
+      color: "linear-gradient(135deg, #2e3192, #0b0d4a)",
     },
     {
       level: "Level 2",
@@ -37,7 +37,7 @@ const AboutServiceModel = () => {
       title: "Industry Specialization",
       text: "Food & agri imports, heavy equipment, electronics, steel and commodity-specific compliance expertise.",
       icon: <Globe2 size={27} />,
-      color: "linear-gradient(135deg, #2848BE, #12A8E8)",
+      color: "linear-gradient(135deg, #2e3192, #393c7e)",
     },
   ];
 
@@ -81,7 +81,7 @@ const AboutServiceModel = () => {
       display: "inline-flex",
       alignItems: "center",
       gap: "8px",
-      color: "#2848BE",
+      color: "#2e3192",
       fontSize: "13px",
       fontWeight: "700",
       letterSpacing: "1px",
@@ -96,7 +96,7 @@ const AboutServiceModel = () => {
       width: "7px",
       height: "7px",
       borderRadius: "50%",
-      background: "#2848BE",
+      background: "#2e3192",
       boxShadow: "0 0 0 5px rgba(40,72,190,0.12)",
     },
 
@@ -110,11 +110,11 @@ const AboutServiceModel = () => {
     },
 
     blue: {
-      color: "#2848BE",
+      color: "#2e3192",
     },
 
     cyan: {
-      color: "#129FE3",
+      color: "#2e3192",
     },
 
     desc: {
@@ -154,7 +154,7 @@ const AboutServiceModel = () => {
       top: 0,
       height: "100%",
       width: "4px",
-      background: "#2848BE",
+      background: "#2e3192",
       opacity: 0,
       transition: "opacity 0.25s ease",
     },
@@ -216,7 +216,7 @@ const AboutServiceModel = () => {
 
     ctaBtn: {
       border: "none",
-      background: "#2848BE",
+      background: "#2e3192",
       color: "#ffffff",
       borderRadius: "13px",
       padding: "13px 20px",
@@ -327,7 +327,7 @@ const AboutServiceModel = () => {
                     className="about-service-card-title"
                     style={{
                       ...styles.cardTitle,
-                      color: isHovered ? "#2848BE" : "#101828",
+                      color: isHovered ? "#2e3192" : "#101828",
                     }}
                   >
                     {item.title}

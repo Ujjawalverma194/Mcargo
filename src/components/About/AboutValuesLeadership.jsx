@@ -46,7 +46,7 @@ const AboutValuesLeadership = () => {
 
     visionIcon: {
       background: "#EEF4FF",
-      color: "#2848BE",
+      color: "#2e3192",
     },
 
     missionIcon: {
@@ -74,7 +74,7 @@ const AboutValuesLeadership = () => {
     },
 
     label: {
-      color: "#2848BE",
+      color: "#2e3192",
       fontSize: "13px",
       fontWeight: "700",
       letterSpacing: "1.2px",
@@ -91,11 +91,11 @@ const AboutValuesLeadership = () => {
     },
 
     blue: {
-      color: "#2848BE",
+      color: "#2e3192",
     },
 
     cyan: {
-      color: "#129FE3",
+      color: "#2e3192",
     },
 
     directorGrid: {

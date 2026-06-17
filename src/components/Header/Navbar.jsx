@@ -133,7 +133,7 @@ const Navbar = () => {
     },
     viewAll: {
       textDecoration: "none",
-      color: "#2848BE",
+      color: "#2e3192",
       fontSize: "13px",
       fontWeight: "700",
       display: "inline-flex",
@@ -141,7 +141,7 @@ const Navbar = () => {
       gap: "8px",
     },
     button: {
-      background: "#2848BE",
+      background: "#2e3192",
       color: "#ffffff",
       border: "none",
       borderRadius: "14px",
@@ -311,7 +311,7 @@ const Navbar = () => {
               align-items: center;
               justify-content: center;
               box-shadow: 0 8px 18px rgba(15,23,42,0.08);
-              color: #2848BE;
+              color: #2e3192;
               margin-right: auto;
             }
 
@@ -355,7 +355,7 @@ const Navbar = () => {
                   to={item.path || "#"}
                   style={{
                     ...styles.navLink,
-                    background: activeStyle ? "#2848BE" : "transparent",
+                    background: activeStyle ? "#2e3192" : "transparent",
                     color: activeStyle ? "#ffffff" : "#344054",
                     boxShadow: activeStyle
                       ? "0 8px 18px rgba(40,72,190,0.18)"

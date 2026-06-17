@@ -111,7 +111,7 @@ const AboutHero = () => {
     },
 
     primaryBtn: {
-      background: "#2848BE",
+      background: "#2e3192",
       color: "#ffffff",
       border: "none",
       borderRadius: "15px",
@@ -205,7 +205,7 @@ const AboutHero = () => {
       height: "46px",
       borderRadius: "14px",
       background: "#EEF4FF",
-      color: "#2848BE",
+      color: "#2e3192",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -234,13 +234,13 @@ const AboutHero = () => {
     progressFill: {
       height: "100%",
       width: "76%",
-      background: "linear-gradient(90deg, #2848BE, #0EA57A)",
+      background: "linear-gradient(90deg, #2e3192, #0EA57A)",
       borderRadius: "999px",
     },
-    home:{
-       color: "#9a9da5",
-       textDecoration:"none"
-    }
+    home: {
+      color: "#9a9da5",
+      textDecoration: "none",
+    },
   };
 
   const stats = [
@@ -335,7 +335,11 @@ const AboutHero = () => {
         <div style={styles.content} className="about-hero-content">
           <div style={styles.breadcrumb} className="about-hero-breadcrumb">
             <Home size={15} />
-           <Link style={styles.home} to="/"> Home</Link> <span style={styles.slash}>/</span>
+            <Link style={styles.home} to="/">
+              {" "}
+              Home
+            </Link>{" "}
+            <span style={styles.slash}>/</span>
             <span style={styles.active}>About</span>
           </div>
 
@@ -358,17 +362,20 @@ const AboutHero = () => {
           </p>
 
           <div style={styles.actions} className="about-hero-actions">
-            <button
-              style={styles.primaryBtn}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-3px)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-              }}
-            >
-              Explore Our Services <ArrowRight size={17} />
-            </button>
+            <Link to="/services">
+              {" "}
+              <button
+                style={styles.primaryBtn}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-3px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
+                Explore Our Services <ArrowRight size={17} />
+              </button>
+            </Link>
 
             <button
               style={styles.secondaryBtn}

@@ -28,7 +28,7 @@ const Howwework = () => {
     },
 
     label: {
-      color: "#2848BE",
+      color: "#2e3192",
       fontSize: "14px",
       fontWeight: "700",
       letterSpacing: "1.2px",
@@ -45,7 +45,7 @@ const Howwework = () => {
     },
 
     blue: {
-      color: "#2848BE",
+      color: "#2e3192",
     },
 
     cyan: {
@@ -131,7 +131,7 @@ const Howwework = () => {
     },
 
     solidBlue: {
-      background: "#2848BE",
+      background: "#2e3192",
       color: "#ffffff",
       padding: "32px",
       boxSizing: "border-box",
@@ -152,7 +152,7 @@ const Howwework = () => {
       height: "44px",
       borderRadius: "14px",
       background: "#EEF4FF",
-      color: "#2848BE",
+      color: "#2e3192",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -213,7 +213,7 @@ const Howwework = () => {
       position: "relative",
       overflow: "hidden",
       backgroundImage:
-        'linear-gradient(135deg, rgba(40,72,190,0.92), rgba(18,168,232,0.72)), url("https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=1200&auto=format&fit=crop&q=80")',
+        'linear-gradient(135deg, rgba(46, 49, 146, 0.75), rgba(46, 49, 146, 0.75)), url("https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=1200&auto=format&fit=crop&q=80")',
       backgroundSize: "cover",
       backgroundPosition: "center",
       boxShadow: "0 16px 38px rgba(40,72,190,0.18)",

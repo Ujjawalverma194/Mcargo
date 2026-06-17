@@ -8,7 +8,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-import logo1 from "../../assets/logo1.png";
+import logo1 from "../../assets/logo.png";
 import logo2 from "../../assets/logo2.png";
 import logo3 from "../../assets/logo3.png";
 import logo4 from "../../assets/logo4.png";
@@ -49,7 +49,7 @@ const TrustedWorldwide = () => {
     },
 
     label: {
-      color: "#2848BE",
+      color: "#2e3192",
       fontSize: "13px",
       fontWeight: "700",
       letterSpacing: "1.2px",
@@ -66,7 +66,7 @@ const TrustedWorldwide = () => {
     },
 
     headingBlue: {
-      color: "#2848BE",
+      color: "#2e3192",
     },
 
     subtitle: {
@@ -167,7 +167,7 @@ const TrustedWorldwide = () => {
       height: "48px",
       borderRadius: "14px",
       background: "#EEF4FF",
-      color: "#2848BE",
+      color: "#2e3192",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -213,7 +213,7 @@ const TrustedWorldwide = () => {
       width: "52px",
       height: "52px",
       borderRadius: "16px",
-      background: "#2848BE",
+      background: "#2e3192",
       color: "#ffffff",
       display: "flex",
       alignItems: "center",
@@ -224,7 +224,7 @@ const TrustedWorldwide = () => {
     slideTag: {
       fontSize: "12px",
       fontWeight: "700",
-      color: "#2848BE",
+      color: "#2e3192",
       background: "#EEF4FF",
       padding: "7px 12px",
       borderRadius: "999px",
@@ -288,7 +288,7 @@ const TrustedWorldwide = () => {
       width: "34px",
       height: "8px",
       borderRadius: "999px",
-      background: "#2848BE",
+      background: "#2e3192",
       cursor: "pointer",
       transition: "all 0.25s ease",
     },
@@ -315,7 +315,7 @@ const TrustedWorldwide = () => {
       width: "44px",
       height: "44px",
       borderRadius: "50%",
-      background: "#2848BE",
+      background: "#2e3192",
       color: "#ffffff",
       display: "flex",
       alignItems: "center",
@@ -395,7 +395,7 @@ const TrustedWorldwide = () => {
               min-height: 250px !important;
               padding: 28px 24px !important;
               border-radius: 24px !important;
-              background: linear-gradient(135deg, #2848BE 0%, #12A8E8 100%) !important;
+              background: linear-gradient(135deg, #2e3192 0%, #12A8E8 100%) !important;
               color: #ffffff !important;
             }
 

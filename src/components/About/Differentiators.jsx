@@ -17,7 +17,7 @@ const AboutDifferentiatorsVideos = () => {
       icon: <ShieldCheck size={24} />,
       title: "Advisory Before Execution",
       text: "IEC setup, FSSAI, SVB, HS classification — compliance is handled before booking cargo.",
-      color: "linear-gradient(135deg,#2848BE,#12A8E8)",
+      color: "linear-gradient(135deg,#2e3192,#12A8E8)",
     },
     {
       icon: <Users size={24} />,
@@ -75,7 +75,7 @@ const AboutDifferentiatorsVideos = () => {
     },
 
     label: {
-      color: "#2848BE",
+      color: "#2e3192",
       fontSize: "13px",
       fontWeight: "700",
       letterSpacing: "1.3px",
@@ -92,11 +92,11 @@ const AboutDifferentiatorsVideos = () => {
     },
 
     blue: {
-      color: "#2848BE",
+      color: "#2e3192",
     },
 
     cyan: {
-      color: "#12A8E8",
+      color: "#2e3192",
     },
 
     diffGrid: {
@@ -290,7 +290,7 @@ const AboutDifferentiatorsVideos = () => {
       height: "44px",
       borderRadius: "14px",
       background: "#EEF4FF",
-      color: "#2848BE",
+      color: "#2e3192",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -298,7 +298,7 @@ const AboutDifferentiatorsVideos = () => {
 
     ctaBtn: {
       border: "none",
-      background: "#2848BE",
+      background: "#2e3192",
       color: "#ffffff",
       padding: "13px 20px",
       borderRadius: "13px",
