@@ -20,6 +20,10 @@ import IncoTerms from './pages/IncoTerms';
 import UsefulLinks from './pages/UsefulLinks';
 import Contact from './pages/Contact';
 import Careers from './pages/Careers';
+import Consolidation from './pages/Consolidation';
+import Hazardous from './pages/Hazardous';
+import Packaging from "./pages/packaging"
+import ValueAdded from './pages/ValueAdded';
 function App() {
   
 
@@ -40,6 +44,11 @@ function App() {
          <Route path="/services/project-cargo" element={<ProjectCargo/>} />
          <Route path="/services/cross-trade" element={<CrossTrade/>} />
          <Route path="/services/addons" element={<AddOn/>} />
+         <Route path="/services/consolidation" element={<Consolidation/>} />
+         <Route path="/services/hazardous" element={<Hazardous/>} />
+         <Route path="/services/packaging" element={<Packaging/>} />
+         <Route path="/services/value-added" element={<ValueAdded/>} />
+
          <Route path="/resources/container-specs" element={<ContainerSpecs/>} />
          <Route path="/resources/incoterms" element={<IncoTerms/>} />
          <Route path="/resources/useful-links" element={<UsefulLinks/>} />

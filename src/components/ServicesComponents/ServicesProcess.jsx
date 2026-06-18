@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { ClipboardCheck, Globe2, ShieldCheck } from "lucide-react";
 
 const ServicesProcess = () => {
@@ -110,53 +111,65 @@ const ServicesProcess = () => {
 
   return (
     <>
-      <style>
-        {`
-          .process-card:hover {
-            transform: translateY(-6px);
-            border-color: #B8C6EF !important;
-            box-shadow: 0 22px 50px rgba(40,72,190,0.11) !important;
-          }
+      <style>{`
+        .process-card:hover {
+          transform: translateY(-6px);
+          border-color: #B8C6EF !important;
+          box-shadow: 0 22px 50px rgba(40,72,190,0.11) !important;
+        }
 
-          @media (max-width: 992px) {
-            .process-grid {
-              grid-template-columns: 1fr !important;
-            }
+        @media (max-width: 992px) {
+          .process-grid { grid-template-columns: 1fr !important; }
+          .process-title { font-size: 42px !important; }
+        }
 
-            .process-title {
-              font-size: 42px !important;
-            }
-          }
-
-          @media (max-width: 576px) {
-            .process-section {
-              padding: 75px 6% !important;
-            }
-
-            .process-title {
-              font-size: 34px !important;
-            }
-
-            .process-card {
-              padding: 28px !important;
-            }
-          }
-        `}
-      </style>
+        @media (max-width: 576px) {
+          .process-section { padding: 75px 6% !important; }
+          .process-title { font-size: 34px !important; }
+          .process-card { padding: 28px !important; }
+        }
+      `}</style>
 
       <section className="process-section" style={styles.section}>
         <div style={styles.container}>
-          <div style={styles.label}>HOW WE WORK</div>
+          <motion.div
+            style={styles.label}
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+          >
+            HOW WE WORK
+          </motion.div>
 
-          <h2 className="process-title" style={styles.title}>
+          <motion.h2
+            className="process-title"
+            style={styles.title}
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+          >
             Three Steps. <span style={styles.blue}>Zero</span>
             <br />
             <span style={styles.cyan}>Surprises.</span>
-          </h2>
+          </motion.h2>
 
           <div className="process-grid" style={styles.grid}>
-            {steps.map((item) => (
-              <div key={item.no} className="process-card" style={styles.card}>
+            {steps.map((item, index) => (
+              <motion.div
+                key={item.no}
+                className="process-card"
+                style={styles.card}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.65,
+                  delay: index * 0.12,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
                 <div style={{ ...styles.iconBox, background: item.color }}>
                   {item.icon}
                 </div>
@@ -165,7 +178,7 @@ const ServicesProcess = () => {
 
                 <h3 style={styles.cardTitle}>{item.title}</h3>
                 <p style={styles.text}>{item.text}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

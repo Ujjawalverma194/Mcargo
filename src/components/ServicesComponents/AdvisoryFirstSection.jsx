@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   ArrowRight,
   CheckCircle2,
@@ -48,7 +49,6 @@ const AdvisoryFirstSection = () => {
       position: "relative",
       overflow: "hidden",
     },
-
     statsContainer: {
       maxWidth: "1450px",
       margin: "0 auto",
@@ -56,7 +56,6 @@ const AdvisoryFirstSection = () => {
       position: "relative",
       zIndex: 2,
     },
-
     label: {
       color: "#12BDF2",
       fontSize: "12px",
@@ -64,7 +63,6 @@ const AdvisoryFirstSection = () => {
       letterSpacing: "3px",
       marginBottom: "22px",
     },
-
     title: {
       fontSize: "42px",
       lineHeight: "1.15",
@@ -72,11 +70,9 @@ const AdvisoryFirstSection = () => {
       margin: "0 0 58px",
       letterSpacing: "-1px",
     },
-
     cyan: {
       color: "#12BDF2",
     },
-
     statGrid: {
       display: "grid",
       gridTemplateColumns: "repeat(4, 1fr)",
@@ -86,17 +82,14 @@ const AdvisoryFirstSection = () => {
       textAlign: "left",
       background: "rgba(255,255,255,0.015)",
     },
-
     statBox: {
       padding: "46px 38px",
       borderRight: "1px solid rgba(255,255,255,0.08)",
       transition: "all 0.25s ease",
     },
-
     activeStat: {
-      background: "rgba(40,72,190,0.26)",
+      background: "rgba(46,49,146,0.26)",
     },
-
     statNo: {
       fontSize: "44px",
       fontWeight: "850",
@@ -104,19 +97,16 @@ const AdvisoryFirstSection = () => {
       marginBottom: "15px",
       letterSpacing: "-1px",
     },
-
     plus: {
       color: "#12BDF2",
       fontSize: "26px",
       marginLeft: "4px",
     },
-
     statTitle: {
       fontSize: "16px",
       fontWeight: "800",
       marginBottom: "10px",
     },
-
     statText: {
       color: "rgba(255,255,255,0.45)",
       fontSize: "12px",
@@ -124,19 +114,16 @@ const AdvisoryFirstSection = () => {
       fontWeight: "600",
       marginBottom: "28px",
     },
-
     smallLine: {
       width: "50px",
       height: "2px",
       background: "#12BDF2",
     },
-
     advisorySection: {
       padding: "105px 9%",
       background: "#ffffff",
       fontFamily: "Inter, sans-serif",
     },
-
     advisoryContainer: {
       maxWidth: "1450px",
       margin: "0 auto",
@@ -145,7 +132,6 @@ const AdvisoryFirstSection = () => {
       gap: "75px",
       alignItems: "center",
     },
-
     badge: {
       display: "inline-flex",
       alignItems: "center",
@@ -159,7 +145,6 @@ const AdvisoryFirstSection = () => {
       fontWeight: "800",
       marginBottom: "26px",
     },
-
     heading: {
       fontSize: "44px",
       lineHeight: "1.15",
@@ -168,13 +153,11 @@ const AdvisoryFirstSection = () => {
       letterSpacing: "-1px",
       margin: "0 0 24px",
     },
-
     blueText: {
-      background: "linear-gradient(90deg,#2848BE,#12A8E8)",
+      background: "linear-gradient(90deg,#2e3192,#12A8E8)",
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
     },
-
     desc: {
       fontSize: "16px",
       lineHeight: "1.8",
@@ -182,9 +165,8 @@ const AdvisoryFirstSection = () => {
       maxWidth: "650px",
       margin: "0 0 30px",
     },
-
     btn: {
-      background: "#2848BE",
+      background: "#2e3192",
       color: "#ffffff",
       border: "none",
       borderRadius: "14px",
@@ -195,10 +177,9 @@ const AdvisoryFirstSection = () => {
       display: "inline-flex",
       alignItems: "center",
       gap: "10px",
-      boxShadow: "0 14px 30px rgba(40,72,190,0.22)",
+      boxShadow: "0 14px 30px rgba(46,49,146,0.22)",
       transition: "all 0.25s ease",
     },
-
     riskCard: {
       background: "#071225",
       color: "#ffffff",
@@ -209,12 +190,10 @@ const AdvisoryFirstSection = () => {
       border: "1px solid rgba(255,255,255,0.08)",
       boxShadow: "0 18px 42px rgba(15,23,42,0.12)",
     },
-
     riskContent: {
       position: "relative",
       zIndex: 2,
     },
-
     riskLabel: {
       color: "#12BDF2",
       fontSize: "12px",
@@ -222,20 +201,17 @@ const AdvisoryFirstSection = () => {
       letterSpacing: "2.5px",
       marginBottom: "14px",
     },
-
     riskTitle: {
       fontSize: "18px",
       lineHeight: "1.5",
       fontWeight: "800",
       margin: "0 0 30px",
     },
-
     riskList: {
       display: "flex",
       flexDirection: "column",
       gap: "18px",
     },
-
     riskItem: {
       display: "flex",
       alignItems: "flex-start",
@@ -244,7 +220,6 @@ const AdvisoryFirstSection = () => {
       fontSize: "14px",
       lineHeight: "1.55",
     },
-
     riskFooter: {
       borderTop: "1px solid rgba(255,255,255,0.1)",
       marginTop: "30px",
@@ -255,105 +230,117 @@ const AdvisoryFirstSection = () => {
       color: "rgba(255,255,255,0.55)",
       fontSize: "13px",
     },
-    
   };
 
   return (
     <>
-      <style>
-        {`
-          .stat-bg-grid::before,
-          .risk-bg-grid::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image:
-              linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-            background-size: 32px 32px;
-            pointer-events: none;
+      <style>{`
+        .stat-bg-grid::before,
+        .risk-bg-grid::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-image:
+            linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+          background-size: 32px 32px;
+          pointer-events: none;
+        }
+
+        .stat-box:hover {
+          background: rgba(46,49,146,0.18);
+        }
+
+        .advisory-btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 18px 36px rgba(46,49,146,0.28);
+        }
+
+        @media (max-width: 1024px) {
+          .stat-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
           }
 
-          .stat-box:hover {
-            background: rgba(40,72,190,0.18);
+          .advisory-grid {
+            grid-template-columns: 1fr !important;
+            gap: 50px !important;
           }
 
-          .advisory-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 18px 36px rgba(40,72,190,0.28);
+          .section-title {
+            font-size: 36px !important;
           }
 
-          @media (max-width: 1024px) {
-            .stat-grid {
-              grid-template-columns: repeat(2, 1fr) !important;
-            }
+          .advisory-heading {
+            font-size: 38px !important;
+          }
+        }
 
-            .advisory-grid {
-              grid-template-columns: 1fr !important;
-              gap: 50px !important;
-            }
-
-            .section-title {
-              font-size: 36px !important;
-            }
-
-            .advisory-heading {
-              font-size: 38px !important;
-            }
+        @media (max-width: 600px) {
+          .stats-section,
+          .advisory-section {
+            padding: 75px 6% !important;
           }
 
-          @media (max-width: 600px) {
-            .stats-section,
-            .advisory-section {
-              padding: 75px 6% !important;
-            }
-
-            .stat-grid {
-              grid-template-columns: 1fr !important;
-            }
-
-            .stat-box {
-              padding: 34px 28px !important;
-              border-right: none !important;
-              border-bottom: 1px solid rgba(255,255,255,0.08);
-            }
-
-            .section-title {
-              font-size: 30px !important;
-              margin-bottom: 42px !important;
-            }
-
-            .stat-no {
-              font-size: 38px !important;
-            }
-
-            .advisory-heading {
-              font-size: 32px !important;
-            }
-
-            .risk-card {
-              padding: 30px 24px !important;
-            }
-
-            .advisory-btn {
-              width: 100%;
-              justify-content: center;
-            }
+          .stat-grid {
+            grid-template-columns: 1fr !important;
           }
-        `}
-      </style>
+
+          .stat-box {
+            padding: 34px 28px !important;
+            border-right: none !important;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+          }
+
+          .section-title {
+            font-size: 30px !important;
+            margin-bottom: 42px !important;
+          }
+
+          .stat-no {
+            font-size: 38px !important;
+          }
+
+          .advisory-heading {
+            font-size: 32px !important;
+          }
+
+          .risk-card {
+            padding: 30px 24px !important;
+          }
+
+          .advisory-btn {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+      `}</style>
 
       <section className="stats-section stat-bg-grid" style={styles.statsSection}>
         <div style={styles.statsContainer}>
-          <div style={styles.label}>BY THE NUMBERS</div>
+          <motion.div
+            style={styles.label}
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+          >
+            BY THE NUMBERS
+          </motion.div>
 
-          <h2 className="section-title" style={styles.title}>
+          <motion.h2
+            className="section-title"
+            style={styles.title}
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          >
             Scale That Inspires <span style={styles.cyan}>Confidence.</span>
-          </h2>
+          </motion.h2>
 
           <div className="stat-grid" style={styles.statGrid}>
             {stats.map((item, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="stat-box"
                 style={{
@@ -364,21 +351,25 @@ const AdvisoryFirstSection = () => {
                       ? "none"
                       : "1px solid rgba(255,255,255,0.08)",
                 }}
+                initial={{ opacity: 0, y: 26 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.62,
+                  delay: index * 0.09,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
               >
                 <div className="stat-no" style={styles.statNo}>
                   {item.number.replace("+", "").replace("%", "")}
-                  {item.number.includes("+") && (
-                    <span style={styles.plus}>+</span>
-                  )}
-                  {item.number.includes("%") && (
-                    <span style={styles.plus}>%</span>
-                  )}
+                  {item.number.includes("+") && <span style={styles.plus}>+</span>}
+                  {item.number.includes("%") && <span style={styles.plus}>%</span>}
                 </div>
 
                 <div style={styles.statTitle}>{item.title}</div>
                 <div style={styles.statText}>{item.text}</div>
                 <div style={styles.smallLine}></div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -386,7 +377,12 @@ const AdvisoryFirstSection = () => {
 
       <section className="advisory-section" style={styles.advisorySection}>
         <div className="advisory-grid" style={styles.advisoryContainer}>
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -34 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+          >
             <div style={styles.badge}>
               <Zap size={14} />
               WHY ADVISORY FIRST?
@@ -408,9 +404,16 @@ const AdvisoryFirstSection = () => {
             <button className="advisory-btn" style={styles.btn}>
               Book a Free Advisory <ArrowRight size={16} />
             </button>
-          </div>
+          </motion.div>
 
-          <div className="risk-card risk-bg-grid" style={styles.riskCard}>
+          <motion.div
+            className="risk-card risk-bg-grid"
+            style={styles.riskCard}
+            initial={{ opacity: 0, x: 34 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.75, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+          >
             <div style={styles.riskContent}>
               <div style={styles.riskLabel}>COMMON PRE-SHIPMENT RISKS</div>
 
@@ -420,10 +423,17 @@ const AdvisoryFirstSection = () => {
 
               <div style={styles.riskList}>
                 {risks.map((risk, index) => (
-                  <div key={index} style={styles.riskItem}>
+                  <motion.div
+                    key={index}
+                    style={styles.riskItem}
+                    initial={{ opacity: 0, y: 14 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.25 + index * 0.07 }}
+                  >
                     <CheckCircle2 size={17} color="#22C55E" />
                     <span>{risk}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 
@@ -432,11 +442,9 @@ const AdvisoryFirstSection = () => {
                 Compliance review completed before every freight booking
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-        
       </section>
-      {/* <hr style={styles.hr} /> */}
     </>
   );
 };

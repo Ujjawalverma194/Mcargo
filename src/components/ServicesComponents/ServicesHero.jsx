@@ -1,6 +1,8 @@
 import React from "react";
-import { Home, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { Home } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const ServicesHero = () => {
   const styles = {
     hero: {
@@ -16,14 +18,12 @@ const ServicesHero = () => {
       display: "flex",
       alignItems: "center",
     },
-
     container: {
       maxWidth: "1450px",
       width: "100%",
       margin: "0 auto",
       padding: "90px 9%",
     },
-
     breadcrumb: {
       display: "inline-flex",
       alignItems: "center",
@@ -37,7 +37,6 @@ const ServicesHero = () => {
       marginBottom: "28px",
       backdropFilter: "blur(8px)",
     },
-
     active: {
       color: "#ffffff",
       fontWeight: "800",
@@ -57,7 +56,6 @@ const ServicesHero = () => {
       letterSpacing: "-1.5px",
       margin: "0 0 22px",
     },
-
     desc: {
       fontSize: "19px",
       lineHeight: "1.65",
@@ -66,106 +64,73 @@ const ServicesHero = () => {
       margin: "0 0 34px",
       fontWeight: "500",
     },
-
-    button: {
-      background: "#2e3192",
-      color: "#ffffff",
-      border: "none",
-      borderRadius: "14px",
-      padding: "14px 24px",
-      fontSize: "15px",
-      fontWeight: "700",
-      cursor: "pointer",
-      display: "inline-flex",
-      alignItems: "center",
-      gap: "10px",
-      boxShadow: "0 14px 30px rgba(40,72,190,0.32)",
-      transition: "all 0.25s ease",
-    },
-    home: {
-      color: "#9a9da5",
-      textDecoration: "none",
-    },
   };
 
   return (
     <>
-      <style>
-        {`
-          @media (max-width: 768px) {
-            .services-hero {
-              min-height: 470px !important;
-            }
+      <style>{`
+        @media (max-width: 768px) {
+          .services-hero { min-height: 470px !important; }
+          .services-hero-container { padding: 70px 6% !important; }
+          .services-hero-title { font-size: 40px !important; }
+          .services-hero-desc { font-size: 16px !important; }
+        }
 
-            .services-hero-container {
-              padding: 70px 6% !important;
-            }
-
-            .services-hero-title {
-              font-size: 40px !important;
-            }
-
-            .services-hero-desc {
-              font-size: 16px !important;
-            }
+        @media (max-width: 480px) {
+          .services-hero-title { font-size: 34px !important; }
+          .services-hero-breadcrumb {
+            font-size: 12px !important;
+            padding: 9px 14px !important;
           }
-
-          @media (max-width: 480px) {
-            .services-hero-title {
-              font-size: 34px !important;
-            }
-
-            .services-hero-breadcrumb {
-              font-size: 12px !important;
-              padding: 9px 14px !important;
-            }
-          }
-        `}
-      </style>
+        }
+      `}</style>
 
       <section className="services-hero" style={styles.hero}>
         <div className="services-hero-container" style={styles.container}>
-          <div className="services-hero-breadcrumb" style={styles.breadcrumb}>
+          <motion.div
+            className="services-hero-breadcrumb"
+            style={styles.breadcrumb}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          >
             <Home size={15} />
             <Link
               to="/"
               style={styles.crumbLink}
-              onMouseEnter={(e) => {
-                e.target.style.color = "#12A8E8";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.color = "rgba(255,255,255,0.78)";
-              }}
+              onMouseEnter={(e) => (e.target.style.color = "#12A8E8")}
+              onMouseLeave={(e) =>
+                (e.target.style.color = "rgba(255,255,255,0.78)")
+              }
             >
               Home
-            </Link>{" "}
-            <span style={styles.slash}></span>{" "}
+            </Link>
             <span style={{ opacity: 0.45 }}>/</span>
             <span style={styles.active}>Services</span>
-          </div>
+          </motion.div>
 
-          <h1 className="services-hero-title" style={styles.title}>
+          <motion.h1
+            className="services-hero-title"
+            style={styles.title}
+            initial={{ opacity: 0, y: 34 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
+          >
             Compliance-Led
             <br />
             Logistics Services
-          </h1>
+          </motion.h1>
 
-          <p className="services-hero-desc" style={styles.desc}>
+          <motion.p
+            className="services-hero-desc"
+            style={styles.desc}
+            initial={{ opacity: 0, y: 26 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
+          >
             From IEC registration to final delivery — advisory before execution,
             always.
-          </p>
-
-          {/* <button
-            style={styles.button}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-3px)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-            }}
-          >
-            Explore Services <ArrowRight size={17} />
-          </button> */}
+          </motion.p>
         </div>
       </section>
     </>
