@@ -42,7 +42,12 @@ const ServicesHero = () => {
       color: "#ffffff",
       fontWeight: "800",
     },
-
+    crumbLink: {
+      color: "rgba(255,255,255,0.78)",
+      textDecoration: "none",
+      transition: "all 0.25s ease",
+      position: "relative",
+    },
     title: {
       fontSize: "58px",
       lineHeight: "1.12",
@@ -77,10 +82,10 @@ const ServicesHero = () => {
       boxShadow: "0 14px 30px rgba(40,72,190,0.32)",
       transition: "all 0.25s ease",
     },
-    home:{
-       color: "#9a9da5",
-       textDecoration:"none"
-    }
+    home: {
+      color: "#9a9da5",
+      textDecoration: "none",
+    },
   };
 
   return (
@@ -122,7 +127,20 @@ const ServicesHero = () => {
         <div className="services-hero-container" style={styles.container}>
           <div className="services-hero-breadcrumb" style={styles.breadcrumb}>
             <Home size={15} />
-            <Link style={styles.home} to="/"> Home</Link> <span style={styles.slash}></span> <span style={{ opacity: 0.45 }}>/</span>
+            <Link
+              to="/"
+              style={styles.crumbLink}
+              onMouseEnter={(e) => {
+                e.target.style.color = "#12A8E8";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.color = "rgba(255,255,255,0.78)";
+              }}
+            >
+              Home
+            </Link>{" "}
+            <span style={styles.slash}></span>{" "}
+            <span style={{ opacity: 0.45 }}>/</span>
             <span style={styles.active}>Services</span>
           </div>
 

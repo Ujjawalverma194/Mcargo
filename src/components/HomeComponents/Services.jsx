@@ -331,6 +331,9 @@ const Services = () => {
       boxShadow: "0 8px 18px rgba(40,72,190,0.22)",
       transition: "all 0.25s ease",
     },
+    link:{
+      textDecoration:"none"
+    }
   };
 
   return (
@@ -611,7 +614,7 @@ const Services = () => {
           })}
         </div>
 
-        <div
+    <Link style={styles.link} to="/services/addons">    <div
           className="services-mobile-addon"
           onMouseEnter={() => setAddonHover(true)}
           onMouseLeave={() => setAddonHover(false)}
@@ -634,7 +637,7 @@ const Services = () => {
             ECTN, Cargo Insurance, Fumigation & more
           </span>
           <ArrowRight size={18} />
-        </div>
+        </div></Link>
 
         <div
           className="services-mobile-consult"

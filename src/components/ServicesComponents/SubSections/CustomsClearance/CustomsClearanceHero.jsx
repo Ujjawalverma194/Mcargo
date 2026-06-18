@@ -1,14 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Home } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Home } from "lucide-react";
 
-const FreightForwardingHero = () => {
+const CustomsClearanceHero = () => {
   const stats = [
-    { number: "FCL & LCL", label: "Container Types" },
-    { number: "190+", label: "Destination Ports" },
-    { number: "Pre-ship", label: "Advisory Check" },
-    { number: "Pre-ship", label: "Compliance Check" },
+    { number: "IEC", label: "Registration & ICEGATE" },
+    { number: "FSSAI", label: "Food & Agri Clearance" },
+    { number: "SVB", label: "Related-Party Imports" },
+    { number: "RoDTEP", label: "Duty Drawback Claims" },
   ];
 
   const fadeUp = {
@@ -37,18 +37,18 @@ const FreightForwardingHero = () => {
       overflow: "hidden",
       fontFamily: "Inter, sans-serif",
       backgroundImage:
-        'linear-gradient(90deg, rgba(8,17,38,0.66), rgba(8,17,38,0.24)), url("https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?w=1400&q=80&fit=crop")',
+        'linear-gradient(90deg, rgba(8,17,38,0.66), rgba(8,17,38,0.28)), url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1400&q=80&fit=crop")',
       backgroundSize: "cover",
       backgroundPosition: "center",
-      display: "block",
-      alignItems: "unset",
+      display: "flex",
+      alignItems: "center",
     },
 
     overlay: {
       position: "absolute",
       inset: 0,
       background:
-        "radial-gradient(circle at 22% 35%, rgba(18,168,232,0.14), transparent 32%)",
+        "radial-gradient(circle at 22% 35%, rgba(18,168,232,0.12), transparent 32%)",
       zIndex: 1,
       pointerEvents: "none",
     },
@@ -56,10 +56,11 @@ const FreightForwardingHero = () => {
     container: {
       width: "100%",
       maxWidth: "1450px",
-      margin: "0 auto",
-      padding: "32px 9% 125px",
+      // margin: "0 auto",
+      padding: "34px 9% 125px",
       position: "relative",
       zIndex: 2,
+      marginBottom: "105px",
     },
 
     breadcrumb: {
@@ -72,20 +73,16 @@ const FreightForwardingHero = () => {
       borderRadius: "999px",
       fontSize: "13px",
       fontWeight: "600",
-      marginBottom: "135px",
+      marginBottom: "120px",
       backdropFilter: "blur(10px)",
       border: "1px solid rgba(255,255,255,0.12)",
     },
+
     crumbLink: {
       color: "rgba(255,255,255,0.78)",
       textDecoration: "none",
       transition: "all 0.25s ease",
       position: "relative",
-    },
-    crumbLink: {
-      color: "rgba(255,255,255,0.78)",
-      textDecoration: "none",
-      transition: "color 0.25s ease",
     },
 
     activeCrumb: {
@@ -158,72 +155,72 @@ const FreightForwardingHero = () => {
     <>
       <style>{`
         @media (max-width: 992px) {
-          .ff-hero-container {
-            padding: 32px 6% 135px !important;
+          .cc-hero-container {
+           padding: 32px 6% 135px !important;
           }
 
-          .ff-hero-breadcrumb {
-            margin-bottom: 78px !important;
+          .cc-hero-breadcrumb {
+             margin-bottom: 78px !important;
           }
 
-          .ff-stats-inner {
+          .cc-stats-inner {
             grid-template-columns: repeat(2, 1fr) !important;
             padding: 0 6% !important;
           }
 
-          .ff-stat:nth-child(2) {
+          .cc-stat:nth-child(2) {
             border-right: none !important;
           }
         }
 
         @media (max-width: 576px) {
-          .ff-hero {
+          .cc-hero {
             min-height: 540px !important;
           }
 
-          .ff-hero-container {
-            padding: 24px 6% 155px !important;
+          .cc-hero-container {
+ padding: 24px 6% 155px !important;
           }
 
-          .ff-hero-breadcrumb {
+          .cc-hero-breadcrumb {
             font-size: 11.5px !important;
             padding: 8px 12px !important;
             gap: 6px !important;
-            margin-bottom: 62px !important;
+           margin-bottom: 62px !important;
             max-width: 100%;
             flex-wrap: wrap;
           }
 
-          .ff-hero-title {
+          .cc-hero-title {
             font-size: 32px !important;
             letter-spacing: -0.8px !important;
           }
 
-          .ff-hero-subtitle {
+          .cc-hero-subtitle {
             font-size: 13.5px !important;
             line-height: 1.6 !important;
           }
 
-          .ff-stat {
+          .cc-stat {
             padding: 17px 14px !important;
           }
 
-          .ff-stat-number {
+          .cc-stat-number {
             font-size: 19px !important;
           }
 
-          .ff-stat-label {
+          .cc-stat-label {
             font-size: 11.5px !important;
           }
         }
       `}</style>
 
-      <section className="ff-hero" style={styles.hero}>
+      <section className="cc-hero" style={styles.hero}>
         <div style={styles.overlay} />
 
-        <div className="ff-hero-container" style={styles.container}>
+        <div className="cc-hero-container" style={styles.container}>
           <motion.div
-            className="ff-hero-breadcrumb"
+            className="cc-hero-breadcrumb"
             style={styles.breadcrumb}
             variants={fadeUp}
             initial="hidden"
@@ -256,11 +253,13 @@ const FreightForwardingHero = () => {
               Services
             </Link>
             <span style={{ opacity: 0.45 }}>/</span>
-            <span style={styles.activeCrumb}>Freight Forwarding</span>
+            <span style={styles.activeCrumb}>
+              Customs Clearance & Trade Advisory
+            </span>
           </motion.div>
 
           <motion.h1
-            className="ff-hero-title"
+            className="cc-hero-title"
             style={styles.title}
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
@@ -270,11 +269,12 @@ const FreightForwardingHero = () => {
               ease: [0.22, 1, 0.36, 1],
             }}
           >
-            Freight Forwarding
+            Customs Clearance &<br />
+            Trade Advisory
           </motion.h1>
 
           <motion.p
-            className="ff-hero-subtitle"
+            className="cc-hero-subtitle"
             style={styles.subtitle}
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -284,7 +284,7 @@ const FreightForwardingHero = () => {
               ease: [0.22, 1, 0.36, 1],
             }}
           >
-            Ocean and air freight with compliance-first approach
+            IEC setup, FSSAI licensing, SVB handling, HS classification
           </motion.p>
         </div>
 
@@ -295,7 +295,7 @@ const FreightForwardingHero = () => {
           transition={{ duration: 0.7, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.div
-            className="ff-stats-inner"
+            className="cc-stats-inner"
             style={styles.statsInner}
             initial="hidden"
             animate="visible"
@@ -303,7 +303,7 @@ const FreightForwardingHero = () => {
           >
             {stats.map((item, index) => (
               <motion.div
-                className="ff-stat"
+                className="cc-stat"
                 variants={statAnim}
                 key={index}
                 style={{
@@ -314,10 +314,10 @@ const FreightForwardingHero = () => {
                       : "1px solid rgba(255,255,255,0.14)",
                 }}
               >
-                <div className="ff-stat-number" style={styles.statNumber}>
+                <div className="cc-stat-number" style={styles.statNumber}>
                   {item.number}
                 </div>
-                <div className="ff-stat-label" style={styles.statLabel}>
+                <div className="cc-stat-label" style={styles.statLabel}>
                   {item.label}
                 </div>
               </motion.div>
@@ -329,4 +329,4 @@ const FreightForwardingHero = () => {
   );
 };
 
-export default FreightForwardingHero;
+export default CustomsClearanceHero;

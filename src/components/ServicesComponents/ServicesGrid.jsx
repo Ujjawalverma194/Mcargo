@@ -11,8 +11,9 @@ import {
   Home,
   Globe2,
   ArrowRight,
+  
 } from "lucide-react";
-
+import { Link } from "react-router-dom";
 const ServicesGrid = () => {
   const featured = [
     {
@@ -45,48 +46,56 @@ const ServicesGrid = () => {
       title: "Warehousing & Cold Storage",
       text: "Temperature-controlled storage with shelf life management.",
       tags: ["Temperature-controlled cold storage facilities", "Shelf life tracking for perishable goods"],
+      path:"/services/warehousing"
     },
     {
       icon: <Truck size={22} />,
       title: "Multimodal Transportation",
       text: "First & Last Mile road, sea, air, rail - single point of contact.",
       tags: ["Factory/warehouse to port/ICD coordination", "Port/ICD to final destination delivery"],
+      path:"/services/Transport"
     },
     {
       icon: <PackageCheck size={22} />,
       title: "Project Cargo & Heavy Equipment",
       text: "Oversized cargo, heavy lift, and specialized equipment handling.",
       tags: ["Heavy lift capabilities and OOG cargo", "Route surveys and feasibility planning"],
+      path:"/services/project-cargo"
     },
     {
       icon: <Boxes size={22} />,
       title: "Cargo Consolidation",
       text: "LCL groupage services with cost-effective consolidation.",
       tags: ["LCL consolidation with group rates", "Buyer’s consolidation programs"],
+      path:"/services/consolidation"
     },
     {
       icon: <AlertTriangle size={22} />,
       title: "Hazardous Cargo & Dangerous Goods",
       text: "Hazardous cargo coordination via certified partner network.",
       tags: ["Certified DG handling partners", "IMDG and IATA-DGR compliance"],
+      path:"/services/hazardous"
     },
     {
       icon: <Package size={22} />,
       title: "Packaging & Palletization",
       text: "Export crating, fumigation, ISPM-15 heat treatment.",
       tags: ["Custom wooden crating", "Export-quality palletization"],
+      path:"/services/packaging"
     },
     {
       icon: <Home size={22} />,
       title: "Value Added Services & Digital Tools",
       text: "Door-to-door delivery, insurance, rate discovery, tracking.",
       tags: ["Door-to-door delivery coordination", "Cargo insurance coverage"],
+      path:"/services/value-added"
     },
     {
       icon: <Globe2 size={22} />,
       title: "Cross Trade",
       text: "Third-country trade with global agent network coordination.",
       tags: ["Third-country trade coordination", "Global partner network"],
+      path:"/services/cross-trade"
     },
   ];
 
@@ -282,6 +291,9 @@ const ServicesGrid = () => {
       alignItems: "center",
       gap: "8px",
     },
+    link:{
+      textDecoration:"none"
+    }
   };
 
   return (
@@ -388,7 +400,7 @@ const ServicesGrid = () => {
 
           <div className="services-card-grid" style={styles.cardsGrid}>
             {services.map((item) => (
-              <div key={item.title} className="service-card" style={styles.card}>
+             <Link style={styles.link} to={item.path}> <div key={item.title} className="service-card" style={styles.card}>
                 <div style={styles.iconBox}>{item.icon}</div>
 
                 <h3 style={styles.cardTitle}>{item.title}</h3>
@@ -406,7 +418,7 @@ const ServicesGrid = () => {
                 <a href="#" style={styles.learn}>
                   Learn More <ArrowRight size={14} />
                 </a>
-              </div>
+              </div></Link>
             ))}
           </div>
         </div>

@@ -628,6 +628,7 @@ const SuccessStories = () => {
         </div>
 
         <Swiper
+        id="case-studies"
           className="success-swiper"
           modules={[Pagination, Autoplay]}
           pagination={{ clickable: true }}

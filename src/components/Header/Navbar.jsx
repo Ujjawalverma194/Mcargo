@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { ChevronDown, ArrowRight, Menu, X } from "lucide-react";
 import logo from "../../assets/logo.png";
+import brochurePdf from "../../assets/brochure.pdf";
 
 const Navbar = () => {
   const [hovered, setHovered] = useState(null);
@@ -18,19 +19,63 @@ const Navbar = () => {
 
   const dropdownItems = {
     Services: [
-      { title: "Freight Forwarding", text: "FCL · LCL · Air · ISO Tank · Project", path: "/services/freight-forwarding" },
-      { title: "Customs Clearance", text: "BOE filing, duty calc & ICEGATE", path: "/services/customs-clearance" },
-      { title: "Warehousing & Cold Storage", text: "Ambient · Chilled · Frozen · Bonded", path: "/services/warehousing-cold-storage" },
-      { title: "Multimodal Transportation", text: "Factory stuffing to last-mile delivery", path: "/services/multimodal-transportation" },
-      { title: "Project Cargo", text: "OOG · Heavy lift · Hi-Lift vehicles", path: "/services/project-cargo" },
-      { title: "Cross Trade", text: "Third-country shipment routing", path: "/services/cross-trade" },
-      { title: "Add-Ons", text: "ECTN, cargo insurance & more", path: "/services/addons" },
+      {
+        title: "Freight Forwarding",
+        text: "FCL · LCL · Air · ISO Tank · Project",
+        path: "/services/freight-forwarding",
+      },
+      {
+        title: "Customs Clearance",
+        text: "BOE filing, duty calc & ICEGATE",
+        path: "/services/customs-clearance",
+      },
+      {
+        title: "Warehousing & Cold Storage",
+        text: "Ambient · Chilled · Frozen · Bonded",
+        path: "/services/warehousing",
+      },
+      {
+        title: "Multimodal Transportation",
+        text: "Factory stuffing to last-mile delivery",
+        path: "/services/transport",
+      },
+      {
+        title: "Project Cargo",
+        text: "OOG · Heavy lift · Hi-Lift vehicles",
+        path: "/services/project-cargo",
+      },
+      {
+        title: "Cross Trade",
+        text: "Third-country shipment routing",
+        path: "/services/cross-trade",
+      },
+      {
+        title: "Add-Ons",
+        text: "ECTN, cargo insurance & more",
+        path: "/services/addons",
+      },
     ],
     Resources: [
-      { title: "Container Specs", text: "Dimensions, weights & capacity", path: "/resources/container-specs" },
-      { title: "Incoterms", text: "2020 rules explained simply", path: "/resources/incoterms" },
-      { title: "Useful Links", text: "ICEGATE, DGFT, customs portals", path: "/resources/useful-links" },
-      { title: "Company Brochure", text: "Download our full capability deck", path: "/resources/brochure" },
+      {
+        title: "Container Specs",
+        text: "Dimensions, weights & capacity",
+        path: "/resources/container-specs",
+      },
+      {
+        title: "Incoterms",
+        text: "2020 rules explained simply",
+        path: "/resources/incoterms",
+      },
+      {
+        title: "Useful Links",
+        text: "ICEGATE, DGFT, customs portals",
+        path: "/resources/useful-links",
+      },
+      {
+        title: "Company Brochure",
+        text: "Open printable company PDF",
+        pdf: brochurePdf,
+      },
     ],
   };
 
@@ -52,6 +97,7 @@ const Navbar = () => {
       boxShadow: "0 8px 28px rgba(15,23,42,0.04)",
       animation: "navDrop 0.55s ease forwards",
     },
+
     logo: {
       width: "185px",
       height: "76px",
@@ -59,6 +105,7 @@ const Navbar = () => {
       display: "block",
       transition: "transform 0.25s ease",
     },
+
     navLinks: {
       display: "flex",
       alignItems: "center",
@@ -69,10 +116,12 @@ const Navbar = () => {
       justifyContent: "center",
       transform: "translateX(-45px)",
     },
+
     navItem: {
       position: "relative",
       padding: "14px 0",
     },
+
     navLink: {
       textDecoration: "none",
       padding: "10px 14px",
@@ -84,6 +133,7 @@ const Navbar = () => {
       gap: "4px",
       transition: "all 0.25s ease",
     },
+
     dropdown: {
       position: "absolute",
       top: "58px",
@@ -92,54 +142,69 @@ const Navbar = () => {
       border: "1px solid #edf1f7",
       borderRadius: "18px",
       boxShadow: "0 18px 45px rgba(15,23,42,0.12)",
-      padding: "24px",
+      padding: "14px",
       zIndex: 999,
       animation: "dropdownFade 0.22s ease forwards",
     },
+
     servicesDropdown: {
-      width: "520px",
+      width: "560px",
       display: "grid",
       gridTemplateColumns: "1fr 1fr",
-      columnGap: "34px",
-      rowGap: "24px",
+      gap: "8px",
     },
+
     resourcesDropdown: {
-      width: "270px",
+      width: "320px",
       display: "flex",
       flexDirection: "column",
-      gap: "24px",
+      gap: "8px",
     },
-    dropdownLink: {
+
+    dropdownCard: {
       textDecoration: "none",
       display: "block",
+      padding: "14px 16px",
+      borderRadius: "14px",
+      background: "transparent",
+      boxShadow: "none",
+      transform: "translateY(0)",
+      transition: "all 0.25s ease",
     },
+
     dropdownTitle: {
       fontSize: "14px",
-      fontWeight: "700",
-      color: "#1F2937",
+      fontWeight: "600",
+      color: "#1f2937",
       marginBottom: "6px",
-      transition: "color 0.2s ease",
+      transition: "color 0.25s ease",
     },
+
     dropdownText: {
       fontSize: "12.5px",
-      color: "#8A94A6",
-      lineHeight: "1.4",
+      color: "#8a94a6",
+      lineHeight: "1.45",
+      transition: "color 0.25s ease",
     },
+
     dropdownBottom: {
       gridColumn: "1 / -1",
       borderTop: "1px solid #eef2f8",
-      paddingTop: "16px",
-      marginTop: "2px",
+      padding: "16px 16px 0",
+      marginTop: "6px",
     },
+
     viewAll: {
       textDecoration: "none",
       color: "#2e3192",
       fontSize: "13px",
-      fontWeight: "700",
+      fontWeight: "600",
       display: "inline-flex",
       alignItems: "center",
       gap: "8px",
+      transition: "all 0.25s ease",
     },
+
     button: {
       background: "#2e3192",
       color: "#ffffff",
@@ -153,196 +218,242 @@ const Navbar = () => {
       fontSize: "14px",
       fontWeight: "600",
       textDecoration: "none",
-      boxShadow: "0 10px 25px rgba(40,72,190,0.20)",
+      boxShadow: "0 10px 25px rgba(46,49,146,0.20)",
       transition: "all 0.25s ease",
       whiteSpace: "nowrap",
     },
+
+    mobileMenuBtn: {
+      display: "none",
+      background: "transparent",
+      border: "none",
+      color: "#344054",
+      cursor: "pointer",
+      padding: "8px",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+
+    mobilePanel: {
+      display: "block",
+      position: "fixed",
+      inset: 0,
+      background: "#ffffff",
+      zIndex: 2000,
+      padding: "24px 24px 30px",
+      fontFamily: "Inter, sans-serif",
+      animation: "dropdownFade 0.25s ease forwards",
+      overflowY: "auto",
+    },
+
+    mobilePanelHeader: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      paddingBottom: "22px",
+      borderBottom: "1px solid #eef2f8",
+    },
+
+    mobileCloseBtn: {
+      background: "transparent",
+      border: "none",
+      color: "#344054",
+      cursor: "pointer",
+      padding: "6px",
+    },
+
+    mobileMenuList: {
+      listStyle: "none",
+      margin: "42px 0 0",
+      padding: 0,
+    },
+
+    mobileMenuItem: {
+      marginBottom: "28px",
+    },
+
+    mobileMenuLink: {
+      width: "100%",
+      background: "transparent",
+      border: "none",
+      textDecoration: "none",
+      color: "#344054",
+      fontSize: "16px",
+      fontWeight: "700",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      padding: 0,
+      fontFamily: "Inter, sans-serif",
+      cursor: "pointer",
+    },
+
+    mobileSubmenu: {
+      marginTop: "18px",
+      paddingLeft: "18px",
+      borderLeft: "1px solid #eef2f8",
+      display: "flex",
+      flexDirection: "column",
+      gap: "12px",
+    },
+
+    mobileSubmenuLink: {
+      textDecoration: "none",
+      color: "#667085",
+      fontSize: "15px",
+      fontWeight: "600",
+      padding: "10px 12px",
+      borderRadius: "12px",
+    },
+
+    mobileContactBtn: {
+      marginTop: "28px",
+      width: "100%",
+      height: "58px",
+      borderRadius: "999px",
+      background: "#2e3192",
+      color: "#ffffff",
+      textDecoration: "none",
+      fontSize: "15px",
+      fontWeight: "600",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: "10px",
+    },
+  };
+
+  const handleDropdownEnter = (e) => {
+    const title = e.currentTarget.querySelector(".dropdown-title");
+    const text = e.currentTarget.querySelector(".dropdown-text");
+
+    e.currentTarget.style.background = "#2e3192";
+    e.currentTarget.style.boxShadow = "0 12px 28px rgba(46,49,146,0.22)";
+    e.currentTarget.style.transform = "translateY(-2px)";
+
+    if (title) title.style.color = "#ffffff";
+    if (text) text.style.color = "rgba(255,255,255,0.78)";
+  };
+
+  const handleDropdownLeave = (e) => {
+    const title = e.currentTarget.querySelector(".dropdown-title");
+    const text = e.currentTarget.querySelector(".dropdown-text");
+
+    e.currentTarget.style.background = "transparent";
+    e.currentTarget.style.boxShadow = "none";
+    e.currentTarget.style.transform = "translateY(0)";
+
+    if (title) title.style.color = "#1f2937";
+    if (text) text.style.color = "#8a94a6";
+  };
+
+  const renderDropdownItem = (dropItem) => {
+    const content = (
+      <>
+        <div className="dropdown-title" style={styles.dropdownTitle}>
+          {dropItem.title}
+        </div>
+        <div className="dropdown-text" style={styles.dropdownText}>
+          {dropItem.text}
+        </div>
+      </>
+    );
+
+    if (dropItem.pdf) {
+      return (
+        <a
+          key={dropItem.title}
+          href={dropItem.pdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={styles.dropdownCard}
+          onMouseEnter={handleDropdownEnter}
+          onMouseLeave={handleDropdownLeave}
+        >
+          {content}
+        </a>
+      );
+    }
+
+    return (
+      <NavLink
+        key={dropItem.title}
+        to={dropItem.path}
+        style={styles.dropdownCard}
+        onMouseEnter={handleDropdownEnter}
+        onMouseLeave={handleDropdownLeave}
+      >
+        {content}
+      </NavLink>
+    );
   };
 
   return (
     <>
-      <style>
-        {`
-          @keyframes navDrop {
-            from { opacity: 0; transform: translateY(-18px); }
-            to { opacity: 1; transform: translateY(0); }
+      <style>{`
+        @keyframes navDrop {
+          from { opacity: 0; transform: translateY(-18px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes dropdownFade {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 992px) {
+          .main-navbar {
+            padding: 0 4% !important;
+            grid-template-columns: 190px 1fr auto !important;
           }
 
-          @keyframes dropdownFade {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+          .desktop-nav-links {
+            transform: none !important;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .desktop-nav-links,
+          .desktop-contact-btn {
+            display: none !important;
+          }
+
+          .main-navbar {
+            grid-template-columns: 1fr auto !important;
+            height: 86px !important;
+            padding: 0 22px !important;
+          }
+
+          .navbar-logo {
+            width: 155px !important;
+            height: 68px !important;
           }
 
           .mobile-menu-btn {
-            display: none;
+            display: flex !important;
           }
+        }
+      `}</style>
 
-          .mobile-panel {
-            display: none;
-          }
-
-          @media (max-width: 768px) {
-            .desktop-nav-links,
-            .desktop-contact-btn {
-              display: none !important;
-            }
-
-            .main-navbar {
-              grid-template-columns: 1fr auto !important;
-              height: 86px !important;
-              padding: 0 22px !important;
-            }
-
-            .navbar-logo {
-              width: 155px !important;
-              height: 68px !important;
-            }
-
-            .mobile-menu-btn {
-              display: flex;
-              background: transparent;
-              border: none;
-              color: #344054;
-              cursor: pointer;
-              padding: 8px;
-              align-items: center;
-              justify-content: center;
-            }
-
-            .mobile-panel {
-              display: block;
-              position: fixed;
-              top: 0;
-              right: 0;
-              width: 100%;
-              height: 100vh;
-              background: #ffffff;
-              z-index: 2000;
-              padding: 24px 24px 30px;
-              font-family: Inter, sans-serif;
-              animation: dropdownFade 0.25s ease forwards;
-              overflow-y: auto;
-            }
-
-            .mobile-panel-header {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              padding-bottom: 22px;
-              border-bottom: 1px solid #eef2f8;
-            }
-
-            .mobile-close-btn {
-              background: transparent;
-              border: none;
-              color: #344054;
-              cursor: pointer;
-              padding: 6px;
-            }
-
-            .mobile-menu-list {
-              list-style: none;
-              margin: 42px 0 0;
-              padding: 0;
-            }
-
-            .mobile-menu-item {
-              margin-bottom: 28px;
-            }
-
-            .mobile-menu-link,
-            .mobile-dropdown-btn {
-              width: 100%;
-              background: transparent;
-              border: none;
-              text-decoration: none;
-              color: #344054;
-              font-size: 16px;
-              font-weight: 600;
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              padding: 0;
-              font-family: Inter, sans-serif;
-              cursor: pointer;
-            }
-
-            .mobile-submenu {
-              margin-top: 18px;
-              margin-left: 0;
-              padding-left: 28px;
-              border-left: 1px solid #eef2f8;
-              display: flex;
-              flex-direction: column;
-              gap: 20px;
-            }
-
-            .mobile-submenu a {
-              text-decoration: none;
-              color: #667085;
-              font-size: 15px;
-              font-weight: 500;
-            }
-
-            .mobile-contact-btn {
-              margin-top: 28px;
-              width: 100%;
-              height: 60px;
-              border-radius: 999px;
-              background: #f6f7fb;
-              border: 1px solid #e5e9f2;
-              color: #344054;
-              text-decoration: none;
-              font-size: 15px;
-              font-weight: 700;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              gap: 18px;
-              box-shadow: inset 0 0 0 1px rgba(15,23,42,0.02);
-            }
-
-            .mobile-contact-icon {
-              width: 48px;
-              height: 48px;
-              border-radius: 50%;
-              background: #ffffff;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              box-shadow: 0 8px 18px rgba(15,23,42,0.08);
-              color: #2e3192;
-              margin-right: auto;
-            }
-
-            .mobile-contact-text {
-              flex: 1;
-              text-align: center;
-              margin-left: -48px;
-            }
-          }
-        `}
-      </style>
-
-      <nav style={styles.navbar} className="main-navbar">
+      <nav className="main-navbar" style={styles.navbar}>
         <NavLink to="/">
           <img
             src={logo}
-            alt="Mcargo Logistics"
-            style={styles.logo}
+            alt="MCargo Logistics"
             className="navbar-logo"
-            onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.03)")}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+            style={styles.logo}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.03)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+            }}
           />
         </NavLink>
 
-        <ul style={styles.navLinks} className="desktop-nav-links">
+        <ul className="desktop-nav-links" style={styles.navLinks}>
           {navItems.map((item) => {
-            const isActive =
-              location.pathname !== "/" && location.pathname === item.path;
-
             const isHovered = hovered === item.name;
-            const activeStyle = isActive || isHovered;
 
             return (
               <li
@@ -353,12 +464,15 @@ const Navbar = () => {
               >
                 <NavLink
                   to={item.path || "#"}
+                  onClick={(e) => {
+                    if (item.dropdown) e.preventDefault();
+                  }}
                   style={{
                     ...styles.navLink,
-                    background: activeStyle ? "#2e3192" : "transparent",
-                    color: activeStyle ? "#ffffff" : "#344054",
-                    boxShadow: activeStyle
-                      ? "0 8px 18px rgba(40,72,190,0.18)"
+                    background: isHovered ? "#2e3192" : "transparent",
+                    color: isHovered ? "#ffffff" : "#344054",
+                    boxShadow: isHovered
+                      ? "0 8px 18px rgba(46,49,146,0.18)"
                       : "none",
                     transform: isHovered ? "translateY(-2px)" : "translateY(0)",
                   }}
@@ -384,23 +498,20 @@ const Navbar = () => {
                         : styles.resourcesDropdown),
                     }}
                   >
-                    {dropdownItems[item.name].map((dropItem) => (
-                      <NavLink
-                        key={dropItem.title}
-                        to={dropItem.path}
-                        style={styles.dropdownLink}
-                      >
-                        <div className="dropdown-title" style={styles.dropdownTitle}>
-                          {dropItem.title}
-                        </div>
-                        <div style={styles.dropdownText}>{dropItem.text}</div>
-                      </NavLink>
-                    ))}
+                    {dropdownItems[item.name].map(renderDropdownItem)}
 
                     <div style={styles.dropdownBottom}>
                       <NavLink
                         to={item.name === "Services" ? "/services" : "/resources"}
                         style={styles.viewAll}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.gap = "12px";
+                          e.currentTarget.style.color = "#12A8E8";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.gap = "8px";
+                          e.currentTarget.style.color = "#2e3192";
+                        }}
                       >
                         View all {item.name.toLowerCase()}
                         <ArrowRight size={15} />
@@ -413,35 +524,61 @@ const Navbar = () => {
           })}
         </ul>
 
-        <NavLink to="/contact" style={styles.button} className="desktop-contact-btn">
+        <NavLink
+          to="/contact#contact-form"
+          className="desktop-contact-btn"
+          style={styles.button}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-2px)";
+            e.currentTarget.style.boxShadow =
+              "0 14px 30px rgba(46,49,146,0.26)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.boxShadow =
+              "0 10px 25px rgba(46,49,146,0.20)";
+          }}
+        >
           Free Advisory
           <ArrowRight size={15} />
         </NavLink>
 
-        <button className="mobile-menu-btn" onClick={() => setMobileOpen(true)}>
+        <button
+          className="mobile-menu-btn"
+          style={styles.mobileMenuBtn}
+          onClick={() => setMobileOpen(true)}
+        >
           <Menu size={28} />
         </button>
       </nav>
 
       {mobileOpen && (
-        <div className="mobile-panel">
-          <div className="mobile-panel-header">
+        <div style={styles.mobilePanel}>
+          <div style={styles.mobilePanelHeader}>
             <NavLink to="/" onClick={() => setMobileOpen(false)}>
-              <img src={logo} alt="Mcargo Logistics" className="navbar-logo" style={styles.logo} />
+              <img
+                src={logo}
+                alt="MCargo Logistics"
+                className="navbar-logo"
+                style={styles.logo}
+              />
             </NavLink>
 
-            <button className="mobile-close-btn" onClick={() => setMobileOpen(false)}>
+            <button
+              style={styles.mobileCloseBtn}
+              onClick={() => setMobileOpen(false)}
+            >
               <X size={24} />
             </button>
           </div>
 
-          <ul className="mobile-menu-list">
+          <ul style={styles.mobileMenuList}>
             {navItems.map((item) => (
-              <li className="mobile-menu-item" key={item.name}>
+              <li style={styles.mobileMenuItem} key={item.name}>
                 {!item.dropdown ? (
                   <NavLink
                     to={item.path}
-                    className="mobile-menu-link"
+                    style={styles.mobileMenuLink}
                     onClick={() => setMobileOpen(false)}
                   >
                     {item.name}
@@ -449,7 +586,7 @@ const Navbar = () => {
                 ) : (
                   <>
                     <button
-                      className="mobile-dropdown-btn"
+                      style={styles.mobileMenuLink}
                       onClick={() =>
                         setMobileDropdown(
                           mobileDropdown === item.name ? null : item.name
@@ -470,16 +607,30 @@ const Navbar = () => {
                     </button>
 
                     {mobileDropdown === item.name && (
-                      <div className="mobile-submenu">
-                        {dropdownItems[item.name].map((dropItem) => (
-                          <NavLink
-                            key={dropItem.title}
-                            to={dropItem.path}
-                            onClick={() => setMobileOpen(false)}
-                          >
-                            {dropItem.title}
-                          </NavLink>
-                        ))}
+                      <div style={styles.mobileSubmenu}>
+                        {dropdownItems[item.name].map((dropItem) =>
+                          dropItem.pdf ? (
+                            <a
+                              key={dropItem.title}
+                              href={dropItem.pdf}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={styles.mobileSubmenuLink}
+                              onClick={() => setMobileOpen(false)}
+                            >
+                              {dropItem.title}
+                            </a>
+                          ) : (
+                            <NavLink
+                              key={dropItem.title}
+                              to={dropItem.path}
+                              style={styles.mobileSubmenuLink}
+                              onClick={() => setMobileOpen(false)}
+                            >
+                              {dropItem.title}
+                            </NavLink>
+                          )
+                        )}
                       </div>
                     )}
                   </>
@@ -489,14 +640,12 @@ const Navbar = () => {
           </ul>
 
           <NavLink
-            to="/contact"
-            className="mobile-contact-btn"
+            to="/contact#contact-form"
+            style={styles.mobileContactBtn}
             onClick={() => setMobileOpen(false)}
           >
-            <span className="mobile-contact-icon">
-              <ArrowRight size={22} />
-            </span>
-            <span className="mobile-contact-text">Free Advisory</span>
+            Free Advisory
+            <ArrowRight size={18} />
           </NavLink>
         </div>
       )}
