@@ -5,7 +5,7 @@ import PackagingDeliverables from '../components/ServicesComponents/SubSections/
 import AboutCTA from '../components/About/AboutCTA'
 import Footer from '../components/Footer/Footer'
 
-const packaging = () => {
+const Packaging = () => {
   return (
   <>
   <PackagingHero/>
@@ -17,4 +17,4 @@ const packaging = () => {
   )
 }
 
-export default packaging
+export default Packaging
