@@ -22,7 +22,7 @@ import Contact from './pages/Contact';
 import Careers from './pages/Careers';
 import Consolidation from './pages/Consolidation';
 import Hazardous from './pages/Hazardous';
-import Packaging from "./pages/Packaging"
+import packaging from "./pages/packaging"
 import ValueAdded from './pages/ValueAdded';
 function App() {
   
@@ -46,7 +46,7 @@ function App() {
          <Route path="/services/addons" element={<AddOn/>} />
          <Route path="/services/consolidation" element={<Consolidation/>} />
          <Route path="/services/hazardous" element={<Hazardous/>} />
-         <Route path="/services/packaging" element={<Packaging/>} />
+         <Route path="/services/packaging" element={<packaging/>} />
          <Route path="/services/value-added" element={<ValueAdded/>} />
 
          <Route path="/resources/container-specs" element={<ContainerSpecs/>} />
