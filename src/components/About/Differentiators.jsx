@@ -37,25 +37,25 @@ const AboutDifferentiatorsVideos = () => {
     {
       title: "Importing Into India",
       text: "Avoid delays with compliance-first import planning.",
-      videoId: "dQw4w9WgXcQ",
+      videoId: "4-QU7WiVxh8",
     },
     {
       title: "Free Trade Agreement Guide",
       text: "Understand trade benefits before shipment planning.",
-      videoId: "dQw4w9WgXcQ",
+      videoId: "VzNp-D4NGEE",
     },
     {
       title: "Key Points for Importing",
       text: "Important checks for importers before booking cargo.",
-      videoId: "dQw4w9WgXcQ",
+      videoId: "CgrKk5MiTvQ",
     },
     {
       title: "Key Points for Exporting",
       text: "Export documentation, compliance and execution tips.",
-      videoId: "dQw4w9WgXcQ",
+      videoId: "f0LH8ko3LM4",
     },
   ];
-
+// https://proagri.co.za/wp-content/uploads/2023/08/FAW-Tron-Logistics-Youtube-Thumbnail.jp
   const getThumbnail = (videoId) =>
     `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 

@@ -32,6 +32,7 @@ const Services = () => {
       img: freightImg,
       icon: <Ship size={26} />,
       color: "linear-gradient(135deg, #06b6d4, #14c8a8)",
+      path:"/services/freight-forwarding"
     },
     {
       title: "Customs Clearance",
@@ -39,6 +40,7 @@ const Services = () => {
       img: customsImg,
       icon: <FileCheck size={26} />,
       color: "linear-gradient(135deg, #2e3192, #12A8E8)",
+      path:"/services/customs-clearance"
     },
     {
       title: "Trade Advisory &...",
@@ -46,6 +48,7 @@ const Services = () => {
       img: advisoryImg,
       icon: <ShieldCheck size={26} />,
       color: "linear-gradient(135deg, #2e3192, #12A8E8)",
+      path:"/services/customs-clearance"
     },
     {
       title: "Inland Transportation",
@@ -53,6 +56,7 @@ const Services = () => {
       img: transportImg,
       icon: <Truck size={26} />,
       color: "linear-gradient(135deg, #12A8E8, #2e3192)",
+      path:"/services/Transport"
     },
     {
       title: "Industry Specialization",
@@ -60,6 +64,7 @@ const Services = () => {
       img: warehouseImg,
       icon: <Globe2 size={26} />,
       color: "linear-gradient(135deg, #22c55e, #4ade80)",
+      path:"/services/project-cargo"
     },
     {
       title: "Packing & Palletization",
@@ -67,6 +72,7 @@ const Services = () => {
       img: packingImg,
       icon: <PackageCheck size={26} />,
       color: "linear-gradient(135deg, #00898d, #00c4a7)",
+      path:"/services/packaging"
     },
   ];
 
@@ -543,7 +549,8 @@ const Services = () => {
             const isHovered = hovered === index;
 
             return (
-              <div
+             <Link style={styles.link} to={service.path}>
+                 <div
                 key={index}
                 className="services-mobile-card"
                 onMouseEnter={() => setHovered(index)}
@@ -610,6 +617,7 @@ const Services = () => {
                   </a>
                 </div>
               </div>
+             </Link>
             );
           })}
         </div>

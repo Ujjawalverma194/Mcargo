@@ -1,5 +1,5 @@
 /* Hero.jsx */
-import React from "react";
+import React, { useState } from "react";
 import {
   ShieldCheck,
   Ship,
@@ -12,9 +12,17 @@ import {
   Anchor,
   Truck,
   MapPin,
+  FileText,
+  X,
 } from "lucide-react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+
 const Hero = () => {
+  const [chatOpen, setChatOpen] = useState(false);
+
+  const whatsappUrl =
+    "https://api.whatsapp.com/send/?phone=917506340281&text=Hi%21+I+need+help+with+India+trade+compliance+and+regulatory+advisory.&type=phone_number&app_absent=0";
+
   const styles = {
     hero: {
       minHeight: "calc(100vh - 78px)",
@@ -411,23 +419,125 @@ const Hero = () => {
       color: "#98A2B3",
       whiteSpace: "nowrap",
     },
-    whatsapp: {
+
+    whatsappWrap: {
       position: "fixed",
       right: "32px",
       bottom: "32px",
+      zIndex: 999,
+    },
+    whatsappTooltip: {
+      position: "absolute",
+      right: "0",
+      bottom: "84px",
+      background: "#ffffff",
+      color: "#101828",
+      padding: "13px 18px",
+      borderRadius: "14px",
+      boxShadow: "0 12px 28px rgba(15,23,42,0.13)",
+      fontSize: "15px",
+      fontWeight: 700,
+      opacity: 0,
+      transform: "translateY(8px)",
+      pointerEvents: "none",
+      transition: "all 0.25s ease",
+      whiteSpace: "nowrap",
+    },
+    tooltipDot: {
+      display: "inline-block",
+      width: "8px",
+      height: "8px",
+      background: "#22c55e",
+      borderRadius: "50%",
+      marginRight: "8px",
+    },
+    chatBox: {
+      position: "absolute",
+      right: "0",
+      bottom: "92px",
+      width: "360px",
+      background: "#ffffff",
+      borderRadius: "20px",
+      overflow: "hidden",
+      boxShadow: "0 24px 60px rgba(15,23,42,0.2)",
+      border: "1px solid rgba(15,23,42,0.08)",
+      transformOrigin: "bottom right",
+      animation: "chatPop 0.25s ease forwards",
+    },
+    chatHeader: {
+      background: "linear-gradient(135deg, #22c55e, #0f9f7a)",
+      padding: "22px 24px",
+      color: "#ffffff",
+      position: "relative",
+    },
+    chatTitle: {
+      fontSize: "18px",
+      fontWeight: 700,
+      marginBottom: "5px",
+    },
+    chatSub: {
+      fontSize: "13px",
+      fontWeight: 400,
+      opacity: 0.95,
+    },
+    chatClose: {
+      position: "absolute",
+      right: "22px",
+      top: "24px",
+      cursor: "pointer",
+      color: "#ffffff",
+    },
+    chatBody: {
+      padding: "24px",
+      background: "#ffffff",
+    },
+    supportCard: {
+      display: "flex",
+      alignItems: "center",
+      gap: "16px",
+      padding: "18px",
+      borderRadius: "16px",
+      background: "#ffffff",
+      cursor: "pointer",
+      transition: "all 0.25s ease",
+      textDecoration: "none",
+      color: "#101828",
+    },
+    supportIcon: {
+      width: "54px",
+      height: "54px",
+      borderRadius: "15px",
+      background: "#dcfce7",
+      color: "#22c55e",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flexShrink: 0,
+    },
+    supportText: {
+      fontSize: "16px",
+      fontWeight: 700,
+    },
+    chatFooter: {
+      background: "#f8fafc",
+      padding: "14px 24px",
+      textAlign: "center",
+      color: "#667085",
+      fontSize: "12px",
+    },
+    whatsapp: {
       width: "72px",
       height: "72px",
       borderRadius: "50%",
-      background: "#25D366",
+      background: chatOpen ? "#0f8f7a" : "#25D366",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
       color: "#fff",
       boxShadow: "0 15px 30px rgba(37,211,102,0.35)",
-      zIndex: 999,
       cursor: "pointer",
       transition: "all 0.25s ease",
-      animation: "whatsappPulse 2.6s ease-in-out infinite",
+      animation: chatOpen ? "none" : "whatsappPulse 2.6s ease-in-out infinite",
     },
   };
 
@@ -534,6 +644,27 @@ const Hero = () => {
             }
           }
 
+          @keyframes chatPop {
+            from {
+              opacity: 0;
+              transform: scale(0.92) translateY(12px);
+            }
+            to {
+              opacity: 1;
+              transform: scale(1) translateY(0);
+            }
+          }
+
+          .hero-whatsapp-wrap:hover .hero-whatsapp-tooltip {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+          }
+
+          .hero-support-card:hover {
+            background: #f8fafc !important;
+            transform: translateY(-2px);
+          }
+
           @media (max-width: 768px) {
             .hero-mobile-section {
               min-height: auto !important;
@@ -625,16 +756,25 @@ const Hero = () => {
               line-height: 1.45 !important;
             }
 
+            .hero-whatsapp-wrap {
+              right: 18px !important;
+              bottom: 18px !important;
+            }
+
             .hero-whatsapp {
               width: 58px !important;
               height: 58px !important;
-              right: 18px !important;
-              bottom: 18px !important;
             }
 
             .hero-whatsapp svg {
               width: 28px !important;
               height: 28px !important;
+            }
+
+            .hero-chat-box {
+              width: 315px !important;
+              right: 0 !important;
+              bottom: 76px !important;
             }
           }
 
@@ -649,6 +789,10 @@ const Hero = () => {
 
             .hero-mobile-feature {
               padding: 12px !important;
+            }
+
+            .hero-chat-box {
+              width: calc(100vw - 36px) !important;
             }
           }
         `}
@@ -728,52 +872,16 @@ const Hero = () => {
             </p>
 
             <div style={styles.actions} className="hero-mobile-actions">
-              <button
-                style={styles.primaryBtn}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-3px)";
-                  e.currentTarget.style.boxShadow =
-                    "0 16px 34px rgba(40,72,190,0.32)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow =
-                    "0 12px 28px rgba(40,72,190,0.24)";
-                }}
-              >
+              <button style={styles.primaryBtn}>
                 Free Advisory <ArrowRight size={17} />
               </button>
 
-         <Link to="/services">     <button
-                style={styles.secondaryBtn}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-3px)";
-                  e.currentTarget.style.boxShadow =
-                    "0 12px 26px rgba(15,23,42,0.08)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "none";
-                }}
-              >
-                Explore Services
-              </button></Link>
+              <Link to="/services">
+                <button style={styles.secondaryBtn}>Explore Services</button>
+              </Link>
             </div>
 
-            <div
-              style={styles.routePanel}
-              className="hero-mobile-route"
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "#C8D6F8";
-                e.currentTarget.style.boxShadow =
-                  "0 18px 40px rgba(40,72,190,0.12)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "#e4ebf7";
-                e.currentTarget.style.boxShadow =
-                  "0 14px 34px rgba(15,23,42,0.08)";
-              }}
-            >
+            <div style={styles.routePanel} className="hero-mobile-route">
               <div style={styles.routePoint}>
                 <div style={styles.pointIcon}>
                   <Ship size={19} />
@@ -801,22 +909,7 @@ const Hero = () => {
           </div>
 
           <div style={styles.right}>
-            <div
-              style={styles.imageBox}
-              className="hero-mobile-image"
-              onMouseEnter={(e) => {
-                const img = e.currentTarget.querySelector("img");
-                if (img) img.style.transform = "scale(1.04)";
-                e.currentTarget.style.boxShadow =
-                  "0 30px 78px rgba(15,23,42,0.20)";
-              }}
-              onMouseLeave={(e) => {
-                const img = e.currentTarget.querySelector("img");
-                if (img) img.style.transform = "scale(1)";
-                e.currentTarget.style.boxShadow =
-                  "0 26px 65px rgba(15,23,42,0.15)";
-              }}
-            >
+            <div style={styles.imageBox} className="hero-mobile-image">
               <img
                 src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&auto=format&fit=crop&q=80"
                 alt="Logistics warehouse"
@@ -854,44 +947,14 @@ const Hero = () => {
 
         <div style={styles.features} className="hero-mobile-features">
           {featureItems.map((item, index) => (
-            <div
-              key={index}
-              style={styles.feature}
-              className="hero-mobile-feature"
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#ffffff";
-                e.currentTarget.style.boxShadow =
-                  "0 10px 22px rgba(15,23,42,0.06)";
-                e.currentTarget.style.transform = "translateY(-3px)";
-
-                const iconBox = e.currentTarget.querySelector(".feature-icon");
-                if (iconBox) {
-                  iconBox.style.background = "#2e3192";
-                  iconBox.style.color = "#ffffff";
-                }
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "transparent";
-                e.currentTarget.style.boxShadow = "none";
-                e.currentTarget.style.transform = "translateY(0)";
-
-                const iconBox = e.currentTarget.querySelector(".feature-icon");
-                if (iconBox) {
-                  iconBox.style.background = "#EEF4FF";
-                  iconBox.style.color = "#2e3192";
-                }
-              }}
-            >
+            <div key={index} style={styles.feature} className="hero-mobile-feature">
               <div className="feature-icon" style={styles.featureIcon}>
                 {item.icon}
               </div>
 
               <div>
                 <div style={styles.featureTitle}>{item.title}</div>
-                <div
-                  style={styles.featureText}
-                  className="hero-mobile-feature-text"
-                >
+                <div style={styles.featureText} className="hero-mobile-feature-text">
                   {item.text}
                 </div>
               </div>
@@ -899,8 +962,54 @@ const Hero = () => {
           ))}
         </div>
 
-        <div style={styles.whatsapp} className="hero-whatsapp">
-          <MessageCircle size={34} />
+        <div style={styles.whatsappWrap} className="hero-whatsapp-wrap">
+          {!chatOpen && (
+            <div style={styles.whatsappTooltip} className="hero-whatsapp-tooltip">
+              <span style={styles.tooltipDot}></span>
+              IL Help
+            </div>
+          )}
+
+          {chatOpen && (
+            <div style={styles.chatBox} className="hero-chat-box">
+              <div style={styles.chatHeader}>
+                <div style={styles.chatTitle}>Chat with us</div>
+                <div style={styles.chatSub}>Choose a department</div>
+
+                <X
+                  size={20}
+                  style={styles.chatClose}
+                  onClick={() => setChatOpen(false)}
+                />
+              </div>
+
+              <div style={styles.chatBody}>
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={styles.supportCard}
+                  className="hero-support-card"
+                >
+                  <div style={styles.supportIcon}>
+                    <FileText size={25} />
+                  </div>
+
+                  <div style={styles.supportText}>Customer Support</div>
+                </a>
+              </div>
+
+              <div style={styles.chatFooter}>Response time: &lt; 2 hours</div>
+            </div>
+          )}
+
+          <div
+            style={styles.whatsapp}
+            className="hero-whatsapp"
+            onClick={() => setChatOpen((prev) => !prev)}
+          >
+            {chatOpen ? <X size={34} /> : <MessageCircle size={34} />}
+          </div>
         </div>
       </section>
     </>

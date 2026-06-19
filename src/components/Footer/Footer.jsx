@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
   Mail,
@@ -34,6 +35,25 @@ const Footer = () => {
     { name: "Useful Links", path: "/resources/useful-links" },
     { name: "Case Studies", path: "/#case-studies" },
   ];
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 34 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
+
+  const stagger = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.15,
+      },
+    },
+  };
 
   const styles = {
     footer: {
@@ -294,131 +314,90 @@ const Footer = () => {
 
   return (
     <>
-      <style>
-        {`
-          @media (max-width: 1024px) {
-            .footer-main-responsive {
-              grid-template-columns: repeat(2, 1fr) !important;
-              gap: 38px !important;
-            }
-
-            .footer-brand-responsive,
-            .footer-contact-responsive {
-              grid-column: span 2 !important;
-            }
-
-            .footer-top-strip-responsive {
-              flex-direction: column !important;
-              align-items: flex-start !important;
-              gap: 22px !important;
-            }
+      <style>{`
+        @media (max-width: 1024px) {
+          .footer-main-responsive {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 38px !important;
           }
 
-          @media (max-width: 768px) {
-            .footer-responsive {
-              padding: 70px 24px 30px !important;
-            }
-
-            .footer-top-strip-responsive {
-              display: none !important;
-            }
-
-            .footer-main-responsive {
-              grid-template-columns: 1fr 1fr !important;
-              gap: 38px 34px !important;
-            }
-
-            .footer-brand-responsive,
-            .footer-contact-responsive {
-              grid-column: 1 / -1 !important;
-            }
-
-            .footer-logo-responsive {
-              width: 190px !important;
-              height: 72px !important;
-              margin-bottom: 22px !important;
-            }
-
-            .footer-about-responsive {
-              font-size: 16px !important;
-              line-height: 1.8 !important;
-              max-width: 100% !important;
-            }
-
-            .footer-col-title-responsive {
-              font-size: 16px !important;
-              margin-bottom: 20px !important;
-            }
-
-            .footer-link-responsive {
-              font-size: 16px !important;
-              line-height: 1.55 !important;
-            }
-
-            .footer-map-responsive {
-              height: 175px !important;
-              border-radius: 20px !important;
-            }
-
-            .footer-divider-responsive {
-              margin: 42px auto 26px !important;
-            }
-
-            .footer-bottom-responsive {
-              flex-direction: column !important;
-              justify-content: center !important;
-              text-align: center !important;
-              gap: 18px !important;
-              font-size: 14px !important;
-            }
-
-            .footer-bottom-links-responsive {
-              justify-content: center !important;
-              flex-wrap: wrap !important;
-              gap: 18px !important;
-            }
+          .footer-brand-responsive,
+          .footer-contact-responsive {
+            grid-column: span 2 !important;
           }
 
-          @media (max-width: 420px) {
-            .footer-responsive {
-              padding: 62px 24px 28px !important;
-            }
-
-            .footer-main-responsive {
-              grid-template-columns: 1fr 1fr !important;
-              gap: 36px 30px !important;
-            }
-
-            .footer-brand-responsive,
-            .footer-contact-responsive {
-              grid-column: 1 / -1 !important;
-            }
-
-            .footer-logo-responsive {
-              width: 185px !important;
-            }
-
-            .footer-contact-item-responsive {
-              font-size: 15px !important;
-            }
-
-            .footer-map-label-responsive {
-              left: 14px !important;
-              bottom: 14px !important;
-              font-size: 12px !important;
-            }
+          .footer-top-strip-responsive {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 22px !important;
           }
-        `}
-      </style>
+        }
 
-      <footer style={styles.footer} className="footer-responsive">
+        @media (max-width: 768px) {
+          .footer-responsive {
+            padding: 70px 24px 30px !important;
+          }
+
+          .footer-top-strip-responsive {
+            display: none !important;
+          }
+
+          .footer-main-responsive {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 38px 34px !important;
+          }
+
+          .footer-brand-responsive,
+          .footer-contact-responsive {
+            grid-column: 1 / -1 !important;
+          }
+
+          .footer-logo-responsive {
+            width: 190px !important;
+            height: 72px !important;
+          }
+
+          .footer-about-responsive {
+            font-size: 16px !important;
+            max-width: 100% !important;
+          }
+
+          .footer-bottom-responsive {
+            flex-direction: column !important;
+            text-align: center !important;
+            gap: 18px !important;
+          }
+
+          .footer-bottom-links-responsive {
+            justify-content: center !important;
+            flex-wrap: wrap !important;
+          }
+        }
+      `}</style>
+
+      <motion.footer
+        style={styles.footer}
+        className="footer-responsive"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.18 }}
+        variants={stagger}
+      >
         <div style={styles.bgGrid}></div>
 
-        <div style={styles.topStrip} className="footer-top-strip-responsive">
+        <motion.div
+          style={styles.topStrip}
+          className="footer-top-strip-responsive"
+          variants={fadeUp}
+        >
           <div style={styles.stripLeft}>
-            <div style={styles.stripIcon}>
+            <motion.div
+              style={styles.stripIcon}
+              whileHover={{ scale: 1.06, rotate: 2 }}
+              transition={{ duration: 0.25 }}
+            >
               <ShieldCheck size={25} />
-            </div>
+            </motion.div>
 
             <div>
               <div style={styles.stripTitle}>
@@ -430,22 +409,19 @@ const Footer = () => {
             </div>
           </div>
 
-          <Link
-            to="/contact"
-            style={styles.stripBtn}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-3px)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-            }}
-          >
-            Get Free Advisory <ArrowRight size={17} />
-          </Link>
-        </div>
+          <motion.div whileHover={{ y: -3 }} transition={{ duration: 0.25 }}>
+            <Link to="/contact" style={styles.stripBtn}>
+              Get Free Advisory <ArrowRight size={17} />
+            </Link>
+          </motion.div>
+        </motion.div>
 
-        <div style={styles.main} className="footer-main-responsive">
-          <div className="footer-brand-responsive">
+        <motion.div
+          style={styles.main}
+          className="footer-main-responsive"
+          variants={stagger}
+        >
+          <motion.div className="footer-brand-responsive" variants={fadeUp}>
             <Link to="/">
               <img
                 src={logo}
@@ -462,87 +438,75 @@ const Footer = () => {
             </p>
 
             <div style={styles.socialRow}>
-              <div style={styles.social}>
+              <motion.div style={styles.social} whileHover={{ y: -4 }}>
                 <span style={{ fontWeight: 600, fontSize: "14px" }}>in</span>
-              </div>
+              </motion.div>
 
-              <div style={styles.social}>
+              <motion.div style={styles.social} whileHover={{ y: -4 }}>
                 <span style={{ fontWeight: 600 }}>▶</span>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {[serviceLinks, companyLinks, resourceLinks].map((group, index) => (
+            <motion.div key={index} variants={fadeUp}>
+              <div style={styles.colTitle}>
+                {index === 0 ? "Services" : index === 1 ? "Company" : "Resources"}
               </div>
-            </div>
-          </div>
+              <ul style={styles.list}>
+                {group.map((item) => (
+                  <li key={item.name}>{renderFooterLink(item)}</li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
 
-          <div>
-            <div style={styles.colTitle} className="footer-col-title-responsive">
-              Services
-            </div>
-            <ul style={styles.list}>
-              {serviceLinks.map((item) => (
-                <li key={item.name}>{renderFooterLink(item)}</li>
-              ))}
-            </ul>
-          </div>
+          <motion.div className="footer-contact-responsive" variants={fadeUp}>
+            <div style={styles.colTitle}>Contact</div>
 
-          <div>
-            <div style={styles.colTitle} className="footer-col-title-responsive">
-              Company
-            </div>
-            <ul style={styles.list}>
-              {companyLinks.map((item) => (
-                <li key={item.name}>{renderFooterLink(item)}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <div style={styles.colTitle} className="footer-col-title-responsive">
-              Resources
-            </div>
-            <ul style={styles.list}>
-              {resourceLinks.map((item) => (
-                <li key={item.name}>{renderFooterLink(item)}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="footer-contact-responsive">
-            <div style={styles.colTitle} className="footer-col-title-responsive">
-              Contact
-            </div>
-
-            <div style={styles.contactItem} className="footer-contact-item-responsive">
+            <div style={styles.contactItem}>
               <Mail size={18} style={styles.contactIcon} />
               info@mcargo.com
             </div>
 
-            <div style={styles.contactItem} className="footer-contact-item-responsive">
+            <div style={styles.contactItem}>
               <Phone size={18} style={styles.contactIcon} />
               +91 98765 43210
             </div>
 
-            <div style={styles.contactItem} className="footer-contact-item-responsive">
+            <div style={styles.contactItem}>
               <MapPin size={18} style={styles.contactIcon} />
               Mumbai, Maharashtra, India
             </div>
 
-            <div style={styles.mapBox} className="footer-map-responsive">
+            <motion.div
+              style={styles.mapBox}
+              className="footer-map-responsive"
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.25 }}
+            >
               <div style={styles.mapGrid}></div>
               <div style={styles.mapPin}>
                 <MapPin size={22} />
               </div>
-              <div style={styles.mapLabel} className="footer-map-label-responsive">
-                MCargo Operations Hub
-              </div>
-            </div>
-          </div>
-        </div>
+              <div style={styles.mapLabel}>MCargo Operations Hub</div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
 
-        <div style={styles.divider} className="footer-divider-responsive"></div>
+        <motion.div style={styles.divider} variants={fadeUp}></motion.div>
 
-        <div style={styles.bottom} className="footer-bottom-responsive">
+        <motion.div
+          style={styles.bottom}
+          className="footer-bottom-responsive"
+          variants={fadeUp}
+        >
           <div>© 2026 MCargo. All rights reserved.</div>
 
-          <div style={styles.bottomLinks} className="footer-bottom-links-responsive">
+          <div
+            style={styles.bottomLinks}
+            className="footer-bottom-links-responsive"
+          >
             <Link to="/contact" style={styles.link}>
               Terms & Conditions
             </Link>
@@ -550,8 +514,8 @@ const Footer = () => {
               Privacy Policy
             </Link>
           </div>
-        </div>
-      </footer>
+        </motion.div>
+      </motion.footer>
     </>
   );
 };

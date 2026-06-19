@@ -8,21 +8,21 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Resources from './pages/Resources';
-import FreightForwarding from './pages/FreightForwarding';
-import CustomeClearance from './pages/CustomeClearance';
-import WareHousing from './pages/WareHousing';
-import Transport from './pages/Transport';
-import ProjectCargo from './pages/ProjectCargo';
-import CrossTrade from './pages/CrossTrade';
-import AddOn from './pages/AddOn';
-import ContainerSpecs from './pages/ContainerSpecs';
-import IncoTerms from './pages/IncoTerms';
-import UsefulLinks from './pages/UsefulLinks';
+import FreightForwarding from './pages/Services/FreightForwarding';
+import CustomeClearance from './pages/Services/CustomeClearance';
+import WareHousing from './pages/Services/WareHousing';
+import Transport from './pages/Services/Transport';
+import ProjectCargo from './pages/Services/ProjectCargo';
+import CrossTrade from './pages/Services/CrossTrade';
+import AddOn from './pages/Services/AddOn';
+import ContainerSpecs from './pages/Resources/ContainerSpecs';
+import IncoTerms from './pages/Resources/IncoTerms';
+import UsefulLinks from './pages/Resources/UsefulLinks';
 import Contact from './pages/Contact';
 import Careers from './pages/Careers';
 import Consolidation from './pages/Consolidation';
 import Hazardous from './pages/Hazardous';
-import Packaging from "./pages/packaging"
+import Packaging from "./pages/Packaging"
 import ValueAdded from './pages/ValueAdded';
 function App() {
   

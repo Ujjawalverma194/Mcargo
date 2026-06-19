@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Home } from "lucide-react";
 
@@ -9,6 +10,34 @@ const PackagingHero = () => {
     { number: "Anti-static", label: "& UV Resistant Films" },
     { number: "On-site", label: "Packaging Operations" },
   ];
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 28 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
+
+  const staggerStats = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.55,
+      },
+    },
+  };
+
+  const statAnim = {
+    hidden: { opacity: 0, y: 22 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
 
   const styles = {
     hero: {
@@ -28,7 +57,7 @@ const PackagingHero = () => {
       maxWidth: "1450px",
       width: "100%",
       margin: "0 auto",
-      padding: "95px 9% 145px",
+      padding: "76px 9% 145px",
       position: "relative",
       zIndex: 2,
     },
@@ -38,12 +67,13 @@ const PackagingHero = () => {
       alignItems: "center",
       gap: "10px",
       background: "rgba(15,23,42,0.48)",
-      padding: "11px 18px",
+      padding: "10px 16px",
       borderRadius: "999px",
-      fontSize: "14px",
+      fontSize: "13px",
       fontWeight: "600",
-      marginBottom: "175px",
+      marginBottom: "140px",
       backdropFilter: "blur(10px)",
+      border: "1px solid rgba(255,255,255,0.14)",
     },
 
     crumbLink: {
@@ -54,23 +84,23 @@ const PackagingHero = () => {
 
     active: {
       color: "#ffffff",
-      fontWeight: "800",
+      fontWeight: "600",
     },
 
     title: {
-      fontSize: "58px",
+      fontSize: "52px",
       lineHeight: "1.08",
-      fontWeight: "800",
+      fontWeight: "600",
       color: "#ffffff",
-      letterSpacing: "-1.5px",
+      letterSpacing: "-1.2px",
       margin: "0 0 18px",
       maxWidth: "650px",
     },
 
     subtitle: {
       color: "#ffffff",
-      fontSize: "18px",
-      fontWeight: "800",
+      fontSize: "17px",
+      fontWeight: "600",
       letterSpacing: "0.4px",
       textTransform: "uppercase",
       margin: 0,
@@ -104,13 +134,14 @@ const PackagingHero = () => {
 
     statNumber: {
       fontSize: "25px",
-      fontWeight: "850",
+      fontWeight: "600",
       marginBottom: "7px",
     },
 
     statLabel: {
       fontSize: "13px",
       color: "rgba(255,255,255,0.72)",
+      fontWeight: "500",
     },
   };
 
@@ -125,16 +156,20 @@ const PackagingHero = () => {
 
           @media (max-width: 992px) {
             .pack-hero-title {
-              font-size: 46px !important;
+              font-size: 44px !important;
             }
 
             .pack-hero-breadcrumb {
-              margin-bottom: 120px !important;
+              margin-bottom: 110px !important;
             }
 
             .pack-stats-inner {
               grid-template-columns: repeat(2, 1fr) !important;
               padding: 0 6% !important;
+            }
+
+            .pack-stat:nth-child(2) {
+              border-right: none !important;
             }
           }
 
@@ -144,21 +179,23 @@ const PackagingHero = () => {
             }
 
             .pack-hero-container {
-              padding: 70px 6% 160px !important;
+              padding: 64px 6% 160px !important;
             }
 
             .pack-hero-title {
-              font-size: 36px !important;
+              font-size: 34px !important;
             }
 
             .pack-hero-subtitle {
-              font-size: 15px !important;
+              font-size: 14px !important;
               line-height: 1.6 !important;
             }
 
             .pack-hero-breadcrumb {
               font-size: 12px !important;
-              margin-bottom: 90px !important;
+              margin-bottom: 84px !important;
+              padding: 9px 13px !important;
+              gap: 8px !important;
             }
 
             .pack-stat {
@@ -166,7 +203,7 @@ const PackagingHero = () => {
             }
 
             .pack-stat-number {
-              font-size: 20px !important;
+              font-size: 19px !important;
             }
           }
         `}
@@ -174,7 +211,13 @@ const PackagingHero = () => {
 
       <section className="pack-hero" style={styles.hero}>
         <div className="pack-hero-container" style={styles.container}>
-          <div className="pack-hero-breadcrumb" style={styles.breadcrumb}>
+          <motion.div
+            className="pack-hero-breadcrumb"
+            style={styles.breadcrumb}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+          >
             <Home size={15} color="#ffffff" />
 
             <Link className="pack-crumb-link" to="/" style={styles.crumbLink}>
@@ -194,21 +237,56 @@ const PackagingHero = () => {
             <span style={{ color: "rgba(255,255,255,0.45)" }}>/</span>
 
             <span style={styles.active}>Packaging & Palletization</span>
-          </div>
+          </motion.div>
 
-          <h1 className="pack-hero-title" style={styles.title}>
+          <motion.h1
+            className="pack-hero-title"
+            style={styles.title}
+            initial={{ opacity: 0, y: 36 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.18,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
             Packaging & Palletization
-          </h1>
+          </motion.h1>
 
-          <p className="pack-hero-subtitle" style={styles.subtitle}>
+          <motion.p
+            className="pack-hero-subtitle"
+            style={styles.subtitle}
+            initial={{ opacity: 0, y: 26 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.75,
+              delay: 0.34,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
             Export crating, fumigation, ISPM-15 heat treatment
-          </p>
+          </motion.p>
         </div>
 
-        <div style={styles.statsBar}>
-          <div className="pack-stats-inner" style={styles.statsInner}>
+        <motion.div
+          style={styles.statsBar}
+          initial={{ opacity: 0, y: 55 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.75,
+            delay: 0.45,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+        >
+          <motion.div
+            className="pack-stats-inner"
+            style={styles.statsInner}
+            variants={staggerStats}
+            initial="hidden"
+            animate="visible"
+          >
             {stats.map((item, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="pack-stat"
                 style={{
@@ -218,15 +296,16 @@ const PackagingHero = () => {
                       ? "none"
                       : "1px solid rgba(255,255,255,0.14)",
                 }}
+                variants={statAnim}
               >
                 <div className="pack-stat-number" style={styles.statNumber}>
                   {item.number}
                 </div>
                 <div style={styles.statLabel}>{item.label}</div>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
     </>
   );
